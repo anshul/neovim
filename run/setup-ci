@@ -1,0 +1,53 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+start=$(date +%s)
+log(){ local s=$(( $(date +%s)-start )); printf -v t '%02d:%02d' $((s/60)) $((s%60)); echo -e "\033[1;32m[$t] ▸ $*"; }
+
+export USER=${USER:-root} NIX_CONFIG="experimental-features = nix-command flakes"
+
+# cores
+: "${NUM_CORES:=$(command -v nproc >/dev/null 2>&1 && nproc || sysctl -n hw.ncpu)}"
+FLAKE_PATH=${FLAKE_PATH:-.}
+
+# install mode
+if [ "$(id -u)" -eq 0 ]; then
+  MODE=single; INSTALL_ARGS="linux --daemon-user-count 1 --init none"; export NIX_REMOTE=local
+else
+  MODE=multi; INSTALL_ARGS=$(uname -s | grep -q Darwin && echo darwin || echo linux); unset NIX_REMOTE || true
+fi
+log "mode: $MODE"
+
+# curl
+if command -v apt-get >/dev/null 2>&1; then
+  apt-get update -qq
+  DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends curl ca-certificates xz-utils
+fi
+
+if ! command -v curl >/dev/null 2>&1; then
+  echo "curl required but could not be installed" >&2; exit 1
+fi
+
+# nix
+if ! command -v nix >/dev/null 2>&1; then
+  log "install nix"
+  curl -fsSL https://install.determinate.systems/nix | bash -s -- install $INSTALL_ARGS --no-confirm \
+    --extra-conf "experimental-features = nix-command flakes" \
+    --extra-conf "max-jobs = $NUM_CORES"
+fi
+
+# env
+[ "$MODE" = multi ] && [ -f /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh ] && . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
+[ -f "$HOME/.nix-profile/etc/profile.d/nix.sh" ] && . "$HOME/.nix-profile/etc/profile.d/nix.sh"
+
+log "Nix $(nix --version)"
+
+[ -n "${RUN_FLAKE_CHECK:-}" ] && { log "flake check"; nix flake check "$FLAKE_PATH"; }
+
+log "prime dev"
+nix develop "$FLAKE_PATH" --command true
+
+end=$(date +%s); d=$((end-start)); printf -v total '%02d:%02d' $((d/60)) $((d%60)); log "done in $total"
+
+# versions
+exit 0

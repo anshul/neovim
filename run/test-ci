@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+nix develop --command bash -c '
+  echo -n "nix: "
+  nix --version 2>/dev/null || echo "not found"
+'
