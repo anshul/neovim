@@ -1,4 +1,4 @@
-set shell := ["bash", "-eu", "-o", "pipefail", "-c"]
+set shell := ["bash", "-u", "-o", "pipefail", "-c"]
 
 default:
     @just --list
@@ -30,11 +30,11 @@ check:
 
 fix:
     alejandra .
-    editorconfig-checker --fix .
+    # editorconfig-checker --fix .
     markdownlint -f "**/*.md"
     ruff check --fix .
     ruff format .
     shopt -s globstar nullglob
     shellcheck -f diff **/*.sh | patch -p0 || true
-    shfmt -w -i 4 -bn -sr **/*.sh
+    # shfmt -w -i 4 -bn -sr **/*.sh
 
