@@ -1,0 +1,47 @@
+root = true
+
+[*]
+indent_style = space
+indent_size  = 2
+charset      = utf-8
+end_of_line  = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+line_length = 160
+
+# Lua source
+[*.lua]
+indent_style = space
+indent_size  = 2
+
+# Nix files
+[*.nix]
+indent_style = space
+indent_size  = 2
+
+# Shell scripts – shfmt will read these
+[*.{sh,bash}]
+indent_style = space
+indent_size  = 2
+switch_case_indent = true
+
+
+# Neovim configs (runtime Lua/VimL)
+[*.{vim,fnl}]
+indent_style = space
+indent_size  = 2
+
+# Markdown docs – keep blank lines' trailing whitespace for tables/code if needed
+[*.md]
+trim_trailing_whitespace = false
+indent_size  = 2
+
+# JSON/YAML
+[*.{json,yml,yaml}]
+indent_size  = 2
+
+# Makefiles must keep tab indent
+[Makefile]
+indent_style = tab
+indent_size  = 8
+

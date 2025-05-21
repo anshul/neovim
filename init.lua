@@ -118,7 +118,7 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 --  See `:help vim.highlight.on_yank()`
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking (copying) text',
-  group = vim.api.nvim_create_augroup('anshul-highlight-yank', { clear = true }),
+  group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
   callback = function()
     vim.highlight.on_yank()
   end,
@@ -404,7 +404,7 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
           },
         },
       },
-      -- anshul.nvim was still on neodev. lazydev is the new version of neodev
+      -- kickstart.nvim was still on neodev. lazydev is the new version of neodev
     },
     config = function()
       -- Brief aside: **What is LSP?**
@@ -437,7 +437,7 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
       --    an lsp (for example, opening `main.rs` is associated with `rust_analyzer`) this
       --    function will be executed to configure the current buffer
       vim.api.nvim_create_autocmd('LspAttach', {
-        group = vim.api.nvim_create_augroup('anshul-lsp-attach', { clear = true }),
+        group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
         callback = function(event)
           -- NOTE: Remember that Lua is a real programming language, and as such it is possible
           -- to define small helper and utility functions so you don't have to repeat yourself.
@@ -496,7 +496,7 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
           -- When you move your cursor, the highlights will be cleared (the second autocommand).
           local client = vim.lsp.get_client_by_id(event.data.client_id)
           if client and client.server_capabilities.documentHighlightProvider then
-            local highlight_augroup = vim.api.nvim_create_augroup('anshul-lsp-highlight', { clear = false })
+            local highlight_augroup = vim.api.nvim_create_augroup('kickstart-lsp-highlight', { clear = false })
             vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
               buffer = event.buf,
               group = highlight_augroup,
@@ -510,10 +510,10 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
             })
 
             vim.api.nvim_create_autocmd('LspDetach', {
-              group = vim.api.nvim_create_augroup('anshul-lsp-detach', { clear = true }),
+              group = vim.api.nvim_create_augroup('kickstart-lsp-detach', { clear = true }),
               callback = function(event2)
                 vim.lsp.buf.clear_references()
-                vim.api.nvim_clear_autocmds { group = 'anshul-lsp-highlight', buffer = event2.buf }
+                vim.api.nvim_clear_autocmds { group = 'kickstart-lsp-highlight', buffer = event2.buf }
               end,
             })
           end
@@ -873,24 +873,24 @@ require('nixCatsUtils.lazyCat').setup(nixCats.pawsible { 'allPlugins', 'start', 
     end,
   },
 
-  -- The following two comments only work if you have downloaded the anshul repo, not just copy pasted the
+  -- The following two comments only work if you have downloaded the kickstart repo, not just copy pasted the
   -- init.lua. If you want these files, they are in the repository, so you can just download them and
   -- place them in the correct locations.
 
-  -- NOTE: Next step on your Neovim journey: Add/Configure additional plugins for anshul
+  -- NOTE: Next step on your Neovim journey: Add/Configure additional plugins for kickstart
   --
-  --  Here are some example plugins that I've included in the anshul repository.
+  --  Here are some example plugins that I've included in the kickstart repository.
   --  Uncomment any of the lines below to enable them (you will need to restart nvim).
   --
   -- NOTE: nixCats: instead of uncommenting them, you can enable them
   -- from the categories set in your packageDefinitions in your flake or other template!
   -- This is because within them, we used nixCats to check if it should be loaded!
-  require 'anshul.plugins.debug',
-  require 'anshul.plugins.indent_line',
-  require 'anshul.plugins.lint',
-  require 'anshul.plugins.autopairs',
-  require 'anshul.plugins.neo-tree',
-  require 'anshul.plugins.gitsigns', -- adds gitsigns recommend keymaps
+  require 'kickstart.plugins.debug',
+  require 'kickstart.plugins.indent_line',
+  require 'kickstart.plugins.lint',
+  require 'kickstart.plugins.autopairs',
+  require 'kickstart.plugins.neo-tree',
+  require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.

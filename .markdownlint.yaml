@@ -1,0 +1,7 @@
+# Default: enable all built-in rules
+default: true
+
+# MD013 – allow up to 180-character lines
+MD013:
+  line_length: 160
+
