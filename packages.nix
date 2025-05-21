@@ -14,7 +14,7 @@ in {
       hosts.node.enable = true;
       hosts.ruby.enable = true;
       hosts.python3.enable = true;
-      aliases = ["nvim"];
+      aliases = ["vim"];
       # neovim-unwrapped = inputs.neovim-nightly-overlay.packages.${pkgs.system}.neovim;
     };
     categories = {
