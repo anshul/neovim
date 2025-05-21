@@ -43,4 +43,4 @@ luac.out
 tags
 /result
 .direnv
-
+.pre-commit-config.yaml
