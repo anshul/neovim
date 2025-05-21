@@ -23,6 +23,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     nixCats.url = "github:BirdeeHub/nixCats-nvim";
+    pre-commit-hooks.url = "github:cachix/pre-commit-hooks.nix";
 
     # neovim-nightly-overlay = {
     #   url = "github:nix-community/neovim-nightly-overlay";
@@ -304,15 +305,25 @@
     # and set the default package to the one passed in here.
     packages = utils.mkAllWithDefault defaultPackage;
 
-    # choose your package for devShell
-    # and add whatever else you want in it.
+    checks = {
+      pre-commit-check = inputs.pre-commit-hooks.lib.${system}.run {
+        src = ./.;
+        hooks = {
+          ruff.enable = true;
+          shellcheck.enable = true;
+          markdownlint.enable = true;
+          alejandra.enable = true;
+          editorconfig-checker.enable = true;
+        };
+      };
+    };
+
     devShells = {
       default = pkgs.mkShell {
         name = defaultPackageName;
-        packages = [ defaultPackage ];
-        inputsFrom = [ ];
-        shellHook = ''
-        '';
+        packages = with pkgs; [ just ];
+        inherit (self.checks.${system}.pre-commit-check) shellHook;
+        buildInputs = self.checks.${system}.pre-commit-check.enabledPackages;
       };
     };
 
