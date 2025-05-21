@@ -28,3 +28,13 @@ lint:
 check:
     nix flake check
 
+fix:
+    alejandra .
+    editorconfig-checker --fix .
+    markdownlint -f "**/*.md"
+    ruff check --fix .
+    ruff format .
+    shopt -s globstar nullglob
+    shellcheck -f diff **/*.sh | patch -p0 || true
+    shfmt -w -i 4 -bn -sr **/*.sh
+
