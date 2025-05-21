@@ -3,6 +3,46 @@
 An opinionated AI first nix neovim config.  This should be easy to use, have a vim aesthetic, and be fast.
 It should also be a reasonable replacement for a well configured vs code / cursor.
 
+## Usage
+
+### With home-manager
+
+Add this repository as an input to your `flake.nix` and import the provided module:
+
+```nix
+# in flake.nix
+inputs.neovim.url = "github:anshul/neovim";
+
+outputs = { self, nixpkgs, neovim, ... }:
+{
+  homeManagerModules = [ neovim.homeModules.default ];
+}
+```
+
+```nix
+{
+  imports = [
+    inputs.neovim.homeModules.default
+  ];
+
+  nvim.enable = true;
+}
+```
+
+### Quick try with `nix run`
+
+Run the configuration without adding it to your setup:
+
+```bash
+nix run github:anshul/neovim#nvim
+```
+
+From a local checkout you can instead execute:
+
+```bash
+nix run .#nvim
+```
+
 ## Plugins
 
 ### Startup Plugins
