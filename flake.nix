@@ -325,6 +325,7 @@
           hooks = {
             ruff.enable = true;
             shellcheck.enable = true;
+            shfmt.enable = true;
             markdownlint.enable = true;
             alejandra.enable = true;
             editorconfig-checker.enable = true;

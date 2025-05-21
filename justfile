@@ -36,5 +36,5 @@ fix:
     ruff format .
     shopt -s globstar nullglob
     shellcheck -f diff **/*.sh | patch -p0 || true
-    # shfmt -w -i 4 -bn -sr **/*.sh
+    shfmt -w -i 4 -bn -sr **/*.sh
 
