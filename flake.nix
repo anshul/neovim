@@ -76,7 +76,7 @@
     dependencyOverlays = import ./overlays inputs;
     categoryDefinitions = import ./categories.nix inputs;
     packageDefinitions = import ./packages.nix inputs;
-    defaultPackageName = "nyanvim";
+    defaultPackageName = "nvim";
   in
     forEachSystem (system: let
       nixCatsBuilder =
