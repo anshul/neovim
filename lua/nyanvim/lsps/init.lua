@@ -1,6 +1,0 @@
-require 'nyanvim.lsps.lsp'
-require 'nyanvim.lsps.diagnostic-signs'
-require 'nyanvim.lsps.lspsaga'
-require 'nyanvim.lsps.symbol-usage'
-require 'nyanvim.lsps.formatters'
-require 'nyanvim.lsps.linters'

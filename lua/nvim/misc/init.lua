@@ -1,0 +1,8 @@
+require 'nvim.misc.mini'
+require 'nvim.misc.mini-files'
+require 'nvim.misc.session'
+require 'nvim.misc.comment'
+require 'nvim.misc.flash'
+require 'nvim.misc.obsidian'
+require 'nvim.misc.render-markdown'
+require 'nvim.misc.search-replace'

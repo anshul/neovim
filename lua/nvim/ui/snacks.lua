@@ -3,8 +3,8 @@ require('lze').load {
     'snacks.nvim',
     after = function(_)
       local snacks = require 'snacks'
-      local snacks_dashboard = require 'nyanvim.ui.snacks-dashboard'
-      require 'nyanvim.ui.snacks-rename'
+      local snacks_dashboard = require 'nvim.ui.snacks-dashboard'
+      require 'nvim.ui.snacks-rename'
 
       snacks.setup {
         styles = {

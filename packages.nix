@@ -1,7 +1,7 @@
 inputs: let
   inherit (inputs.nixCats) utils;
 in {
-  nyanvim = {
+  nvim = {
     pkgs,
     name,
     ...

@@ -15,7 +15,7 @@ in
     # at RUN TIME for plugins. Will be available to path within neovim terminal
     environmentVariables = {
       test = {
-        NYANVIM_VAR = "Nyaaan!";
+        NVIM_VAR = "Nyaaan!";
       };
     };
 

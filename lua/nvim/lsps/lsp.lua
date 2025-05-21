@@ -1,4 +1,4 @@
-local servers = require 'nyanvim.lsps.servers'
+local servers = require 'nvim.lsps.servers'
 
 require('lze').load {
   {
