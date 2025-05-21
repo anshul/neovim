@@ -157,9 +157,14 @@ nix run .#nvim
 - `[t` `]t` — previous/next tab
 - `<C-Up>` `<C-Down>` `<C-Left>` `<C-Right>` — resize windows
 - `<Leader>w=` — equalize window sizes
-- `[b` `]b` — previous/next buffer
+- `[b` `]b` or `<A-Left>` `<A-Right>` — previous/next buffer
 - `<C-t>` — new tab
-- `<C-n>` — clear search highlight
+- `<C-n>` — open notes
+- `<C-f>` — git finder
+- `<C-b>` — buffer finder
+- `<C-d>` — close buffer
+- `<C-x>` — diagnostics list
+- `<C-a>` — toggle Avante
 - `<C-s>` — save file
 - `<Leader>qb` `<Leader>qB` `<Leader>qw` `<Leader>qt` `<Leader>qa` — close buffers/windows/tabs
 - `<` / `>` in visual mode — keep selection while indenting
