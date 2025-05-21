@@ -37,3 +37,4 @@ fix:
     shopt -s globstar nullglob
     # shellcheck -f diff **/*.sh run/* | patch -p1 || true
     shellcheck -f diff run/* | patch -p1 || true
+    stylua .

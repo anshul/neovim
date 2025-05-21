@@ -52,31 +52,11 @@ local function map(mode, key, action, opts)
 end
 
 map('n', '<leader>nn', '<cmd>ObsidianNew<cr>', { desc = 'Obsidian new note' })
-map(
-  'n',
-  '<leader>nf',
-  '<cmd>ObsidianQuickSwitch<cr>',
-  { desc = 'Obsidian quick switch' }
-)
+map('n', '<leader>nf', '<cmd>ObsidianQuickSwitch<cr>', { desc = 'Obsidian quick switch' })
 map('n', '<leader>nd', '<cmd>ObsidianToday<cr>', { desc = 'Obsidian today' })
-map(
-  'n',
-  '<leader>nt',
-  '<cmd>ObsidianTemplate<cr>',
-  { desc = 'Obsidian template' }
-)
+map('n', '<leader>nt', '<cmd>ObsidianTemplate<cr>', { desc = 'Obsidian template' })
 map('v', '<leader>nk', '<cmd>ObsidianLink<cr>', { desc = 'Obsidian link' })
-map(
-  'n',
-  '<leader>nb',
-  '<cmd>ObsidianBacklinks<cr>',
-  { desc = 'Obsidian backlinks' }
-)
+map('n', '<leader>nb', '<cmd>ObsidianBacklinks<cr>', { desc = 'Obsidian backlinks' })
 map('n', '<leader>nl', '<cmd>ObsidianLinks<cr>', { desc = 'Obsidian links' })
 map('n', '<leader>nr', '<cmd>ObsidianRename<cr>', { desc = 'Obsidian rename' })
-map(
-  'n',
-  '<leader>no',
-  '<cmd>ObsidianTOC<cr>',
-  { desc = 'Obsidian table of contents' }
-)
+map('n', '<leader>no', '<cmd>ObsidianTOC<cr>', { desc = 'Obsidian table of contents' })

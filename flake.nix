@@ -98,7 +98,7 @@
             shellcheck.enable = true;
             markdownlint.enable = true;
             alejandra.enable = true;
-            luacheck.enable = true;
+            stylua.enable = true;
           };
         };
       };

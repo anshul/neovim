@@ -39,20 +39,14 @@ require('lze').load {
       }
 
       local sign_def = vim.fn.sign_define
-      sign_def(
-        'DapBreakpoint',
-        { text = '●', texthl = 'DapBreakpoint', linehl = '', numhl = '' }
-      )
+      sign_def('DapBreakpoint', { text = '●', texthl = 'DapBreakpoint', linehl = '', numhl = '' })
       sign_def('DapBreakpointCondition', {
         text = '●',
         texthl = 'DapBreakpointCondition',
         linehl = '',
         numhl = '',
       })
-      sign_def(
-        'DapLogPoint',
-        { text = '◆', texthl = 'DapLogPoint', linehl = '', numhl = '' }
-      )
+      sign_def('DapLogPoint', { text = '◆', texthl = 'DapLogPoint', linehl = '', numhl = '' })
     end,
   },
   {

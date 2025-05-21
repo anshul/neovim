@@ -20,30 +20,10 @@ require('lze').load {
   },
 }
 
-vim.keymap.set(
-  'n',
-  '<leader>jc',
-  '<cmd>Neopyter execute notebook:run-cell<cr>',
-  { desc = 'run selected' }
-)
-vim.keymap.set(
-  'n',
-  '<leader>ja',
-  '<cmd>Neopyter execute notebook:run-all-above<cr>',
-  { desc = 'run all above cell' }
-)
-vim.keymap.set(
-  'n',
-  '<leader>jr',
-  '<cmd>Neopyter execute kernelmenu:restart<cr>',
-  { desc = 'restart kernel' }
-)
-vim.keymap.set(
-  'n',
-  '<leader>jA',
-  '<cmd>Neopyter execute notebook:restart-run-all<cr>',
-  { desc = 'restart kernel and run all' }
-)
+vim.keymap.set('n', '<leader>jc', '<cmd>Neopyter execute notebook:run-cell<cr>', { desc = 'run selected' })
+vim.keymap.set('n', '<leader>ja', '<cmd>Neopyter execute notebook:run-all-above<cr>', { desc = 'run all above cell' })
+vim.keymap.set('n', '<leader>jr', '<cmd>Neopyter execute kernelmenu:restart<cr>', { desc = 'restart kernel' })
+vim.keymap.set('n', '<leader>jA', '<cmd>Neopyter execute notebook:restart-run-all<cr>', { desc = 'restart kernel and run all' })
 
 -- Provide a command to create a blank new Python notebook
 -- note: the metadata is needed for Jupytext to understand how to parse the notebook.

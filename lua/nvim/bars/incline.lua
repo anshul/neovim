@@ -31,8 +31,7 @@ require('lze').load {
           margin = { horizontal = 1, vertical = 0 },
         },
         render = function(props)
-          local filename =
-            vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ':t')
+          local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ':t')
           if filename == '' then
             filename = '[No Name]'
           end
@@ -58,10 +57,7 @@ require('lze').load {
             end
             for name, icon in pairs(icons) do
               if tonumber(signs[name]) and signs[name] > 0 then
-                table.insert(
-                  labels,
-                  { icon .. signs[name] .. ' ', group = 'Diff' .. name }
-                )
+                table.insert(labels, { icon .. signs[name] .. ' ', group = 'Diff' .. name })
               end
             end
             if #labels > 0 then
@@ -71,20 +67,13 @@ require('lze').load {
           end
 
           local function get_diagnostic_label()
-            local icons =
-              { error = ' ', warn = ' ', info = ' ', hint = ' ' }
+            local icons = { error = ' ', warn = ' ', info = ' ', hint = ' ' }
             local label = {}
 
             for severity, icon in pairs(icons) do
-              local n = #vim.diagnostic.get(
-                props.buf,
-                { severity = vim.diagnostic.severity[string.upper(severity)] }
-              )
+              local n = #vim.diagnostic.get(props.buf, { severity = vim.diagnostic.severity[string.upper(severity)] })
               if n > 0 then
-                table.insert(
-                  label,
-                  { icon .. n .. ' ', group = 'DiagnosticSign' .. severity }
-                )
+                table.insert(label, { icon .. n .. ' ', group = 'DiagnosticSign' .. severity })
               end
             end
             if #label > 0 then
@@ -105,10 +94,7 @@ require('lze').load {
                 and {
                   ' ',
                   ft_icon,
-                  guibg = modified
-                      and (props.focused and colors.peach or colors.surface0)
-                    or props.focused and colors.blue
-                    or colors.surface0,
+                  guibg = modified and (props.focused and colors.peach or colors.surface0) or props.focused and colors.blue or colors.surface0,
                   -- guifg = props.focused and helpers.contrast_color(ft_color) or ft_color,
                   guifg = props.focused and colors.crust or colors.overlay2,
                 }
@@ -117,22 +103,13 @@ require('lze').load {
               ' ',
               filename,
               gui = 'italic,bold',
-              guibg = modified
-                  and (props.focused and colors.peach or colors.surface0)
-                or props.focused and colors.blue
-                or colors.surface0,
-              guifg = modified
-                  and (props.focused and colors.crust or colors.peach)
-                or props.focused and colors.crust
-                or colors.overlay2,
+              guibg = modified and (props.focused and colors.peach or colors.surface0) or props.focused and colors.blue or colors.surface0,
+              guifg = modified and (props.focused and colors.crust or colors.peach) or props.focused and colors.crust or colors.overlay2,
             },
             {
               props.focused and grapple_status_text or ' ',
               gui = 'bold',
-              guibg = modified
-                  and (props.focused and colors.peach or colors.surface0)
-                or props.focused and colors.blue
-                or colors.surface0,
+              guibg = modified and (props.focused and colors.peach or colors.surface0) or props.focused and colors.blue or colors.surface0,
               guifg = props.focused and colors.crust or colors.overlay2,
             },
             guibg = colors.base,

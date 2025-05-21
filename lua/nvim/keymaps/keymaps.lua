@@ -39,24 +39,9 @@ map('n', ']t', '<cmd>tabnext<CR>', { desc = 'Next tab' })
 -- Resize window with Ctrl + arrow keys
 map('n', '<C-Up>', '<cmd>resize +4<CR>', { desc = 'Increase window height' })
 map('n', '<C-Down>', '<cmd>resize -4<CR>', { desc = 'Decrease window height' })
-map(
-  'n',
-  '<C-Left>',
-  '<cmd>vertical resize +4<CR>',
-  { desc = 'Increase window width' }
-)
-map(
-  'n',
-  '<C-Right>',
-  '<cmd>vertical resize -4<CR>',
-  { desc = 'Decrease window width' }
-)
-map(
-  'n',
-  '<Leader>w=',
-  '<cmd>tabdo wincmd =<CR>',
-  { desc = 'Window auto resize' }
-)
+map('n', '<C-Left>', '<cmd>vertical resize +4<CR>', { desc = 'Increase window width' })
+map('n', '<C-Right>', '<cmd>vertical resize -4<CR>', { desc = 'Decrease window width' })
+map('n', '<Leader>w=', '<cmd>tabdo wincmd =<CR>', { desc = 'Window auto resize' })
 
 -- Navigate buffers
 map('n', '[b', '<cmd>bprevious<CR>', { desc = 'Previous buffer' })
@@ -72,18 +57,8 @@ map('n', '<C-n>', '<cmd>nohl<CR>', { desc = 'Clear search highlight' })
 map('n', '<C-s>', '<cmd>w<CR>', { desc = 'Save file' })
 
 -- Close buffers, windows and tabs
-map(
-  'n',
-  '<Leader>qb',
-  "<cmd>lua require('snacks').bufdelete()<CR>",
-  { desc = 'Delete buffer' }
-)
-map(
-  'n',
-  '<Leader>qB',
-  "<cmd>lua require('snacks').bufdelete.all()<CR>",
-  { desc = 'Delete all buffers' }
-)
+map('n', '<Leader>qb', "<cmd>lua require('snacks').bufdelete()<CR>", { desc = 'Delete buffer' })
+map('n', '<Leader>qB', "<cmd>lua require('snacks').bufdelete.all()<CR>", { desc = 'Delete all buffers' })
 map('n', '<Leader>qw', '<cmd>q<CR>', { desc = 'Close window' })
 map('n', '<Leader>qt', '<cmd>tabclose<CR>', { desc = 'Close tab' })
 map('n', '<Leader>qa', '<cmd>qa<CR>', { desc = 'Close all and quit' })

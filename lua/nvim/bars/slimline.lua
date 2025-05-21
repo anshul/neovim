@@ -18,15 +18,10 @@ require('lze').load {
           grapple_status_text = grapple.statusline {}
         end
         local output_text_lhs = '󰛢'
-        local output_text_rhs =
-          string.sub(grapple_status_text, 6):gsub('%s+$', '')
+        local output_text_rhs = string.sub(grapple_status_text, 6):gsub('%s+$', '')
         local h = require 'slimline.highlights'
         local c = require('slimline').config
-        local comp = h.hl_component(
-          { primary = output_text_lhs, secondary = output_text_rhs },
-          h.hls.components['diagnostics'],
-          c.sep
-        )
+        local comp = h.hl_component({ primary = output_text_lhs, secondary = output_text_rhs }, h.hls.components['diagnostics'], c.sep)
         return comp
       end
 
@@ -79,21 +74,13 @@ require('lze').load {
       require('slimline.highlights').create_hls()
       local colors = require('catppuccin.palettes').get_palette 'mocha'
       local set_hl_primary = function(name, fg_color, bg_color)
-        vim.api.nvim_set_hl(
-          0,
-          name,
-          { fg = fg_color, bg = bg_color, italic = true, bold = true }
-        )
+        vim.api.nvim_set_hl(0, name, { fg = fg_color, bg = bg_color, italic = true, bold = true })
       end
       local set_hl_secondary = function(name, fg_color, bg_color)
         vim.api.nvim_set_hl(0, name, { fg = fg_color, bg = bg_color })
       end
       local set_hl_tertiary = function(name, fg_color, bg_color)
-        vim.api.nvim_set_hl(
-          0,
-          name,
-          { fg = fg_color, bg = bg_color, bold = true }
-        )
+        vim.api.nvim_set_hl(0, name, { fg = fg_color, bg = bg_color, bold = true })
       end
       -- modes
       set_hl_tertiary('SlimlineModeNormal', colors.crust, colors.yellow)
@@ -109,16 +96,8 @@ require('lze').load {
       -- secondary
       set_hl_secondary('SlimlinePathSecondary', colors.text, colors.surface0)
       set_hl_secondary('SlimlineGitSecondary', colors.text, colors.surface0)
-      set_hl_secondary(
-        'SlimlineDiagnosticsSecondary',
-        colors.text,
-        colors.surface0
-      )
-      set_hl_secondary(
-        'SlimlineFiletype_lspSecondary',
-        colors.text,
-        colors.surface0
-      )
+      set_hl_secondary('SlimlineDiagnosticsSecondary', colors.text, colors.surface0)
+      set_hl_secondary('SlimlineFiletype_lspSecondary', colors.text, colors.surface0)
     end,
   },
 }

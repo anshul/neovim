@@ -34,8 +34,7 @@ vim.api.nvim_create_autocmd({ 'CmdWinEnter' }, {
   end,
 })
 
-local auto_resize_group =
-  vim.api.nvim_create_augroup('_auto_resize', { clear = true })
+local auto_resize_group = vim.api.nvim_create_augroup('_auto_resize', { clear = true })
 vim.api.nvim_create_autocmd({ 'VimResized' }, {
   group = auto_resize_group,
   pattern = '*',
