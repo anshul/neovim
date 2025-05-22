@@ -6,34 +6,40 @@ M.dashboard = {
   preset = {
     keys = {
       {
+        icon = ' ',
+        key = '<C-p>',
+        desc = 'Find git file',
+        action = ':lua Snacks.picker.git_files({ untracked = true })',
+      },
+      {
+        icon = ' ',
+        key = '<C-f>',
+        desc = 'Search',
+        action = ':lua Snacks.picker.grep()',
+      },
+      {
         icon = ' ',
-        key = 'f',
-        desc = 'Find File',
+        key = '<C-o>',
+        desc = 'Open file',
         action = ':lua Snacks.picker.files()',
       },
       {
         icon = ' ',
-        key = 'n',
-        desc = 'New File',
-        action = ':ene | startinsert',
-      },
-      {
-        icon = ' ',
-        key = 'g',
-        desc = 'Find Text',
-        action = ':lua Snacks.picker.grep()',
-      },
-      {
-        icon = ' ',
-        key = 'p',
-        desc = 'Find project',
-        action = ':lua Snacks.picker.projects()',
+        key = '<C-n>',
+        desc = 'Take notes',
+        action = ':ObsidianQuickSwitch',
       },
       {
         icon = ' ',
-        key = 't',
+        key = '<C-t>',
         desc = 'Find todos',
         action = ':lua Snacks.picker.todo_comments()',
+      },
+      {
+        icon = '󰚩 ',
+        key = '<C-a>',
+        desc = 'Start Avante (AI)',
+        action = ':AvanteToggle',
       },
       {
         icon = ' ',
