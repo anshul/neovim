@@ -160,7 +160,8 @@ nix run .#nvim
 - `[b` `]b` or `<A-Left>` `<A-Right>` — previous/next buffer
 - `<C-t>` — new tab
 - `<C-n>` — open notes
-- `<C-f>` — git finder
+- `<C-o>` — file finder
+- `<C-p>` — git finder
 - `<C-b>` — buffer finder
 - `<C-d>` — close buffer
 - `<C-x>` — diagnostics list

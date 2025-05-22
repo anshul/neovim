@@ -55,7 +55,8 @@ map('n', '<C-t>', '<cmd>tabnew<CR>', { desc = 'New tab' })
 -- Turn off search highlight
 -- Notes and utilities
 map('n', '<C-n>', '<cmd>ObsidianQuickSwitch<CR>', { desc = 'Open notes' })
-map('n', '<C-f>', '<cmd>lua Snacks.picker.git_files({untracked=true})<cr>', { desc = 'Git finder' })
+map('n', '<C-o>', '<cmd>lua Snacks.picker.files()<cr>', { desc = 'File finder' })
+map('n', '<C-p>', '<cmd>lua Snacks.picker.git_files({untracked=true})<cr>', { desc = 'Git finder' })
 map('n', '<C-b>', '<cmd>lua Snacks.picker.buffers()<cr>', { desc = 'Buffer finder' })
 map('n', '<C-d>', "<cmd>lua require('snacks').bufdelete()<CR>", { desc = 'Close buffer' })
 map('n', '<C-x>', '<cmd>Trouble diagnostics toggle focus=true<cr>', { desc = 'Diagnostics list' })
