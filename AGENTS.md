@@ -16,101 +16,101 @@
 Here is a high-level overiew of the project structure:
 
 .
-├── AGENTS.md
-├── flake.nix
-├── packages.nix
-├── categories.nix
-├── init.lua
-├── after
-│   └── plugin
-│   └── colors.lua
-├── lua
-│   └── nvim
-│   ├── ai
-│   │   ├── avante.lua
-│   │   ├── chatgpt.lua
-│   │   ├── init.lua
-│   │   └── wtf.lua
-│   ├── autocmds.lua
-│   ├── bars
-│   │   ├── incline.lua
-│   │   ├── init.lua
-│   │   ├── lualine.lua
-│   │   ├── slimline.lua
-│   │   └── tabby.lua
-│   ├── completions
-│   │   ├── blink-cmp.lua
-│   │   ├── copilot.lua
-│   │   ├── init.lua
-│   │   └── neogen.lua
-│   ├── debug
-│   │   └── init.lua
-│   ├── git
-│   │   ├── diffview.lua
-│   │   ├── gitsigns.lua
-│   │   ├── init.lua
-│   │   ├── neogit.lua
-│   │   └── octo.lua
-│   ├── init.lua
-│   ├── keymaps
-│   │   ├── init.lua
-│   │   ├── keymaps-plugins.lua
-│   │   ├── keymaps-snacks.lua
-│   │   ├── keymaps.lua
-│   │   └── whichkey.lua
-│   ├── literate
-│   │   ├── init.lua
-│   │   ├── iron.lua
-│   │   └── neopyter.lua
-│   ├── lsps
-│   │   ├── diagnostic-signs.lua
-│   │   ├── formatters.lua
-│   │   ├── init.lua
-│   │   ├── linters.lua
-│   │   ├── lsp.lua
-│   │   ├── lspsaga.lua
-│   │   ├── servers.lua
-│   │   └── symbol-usage.lua
-│   ├── misc
-│   │   ├── comment.lua
-│   │   ├── flash.lua
-│   │   ├── init.lua
-│   │   ├── mini-files.lua
-│   │   ├── mini.lua
-│   │   ├── obsidian.lua
-│   │   ├── render-markdown.lua
-│   │   ├── search-replace.lua
-│   │   └── session.lua
-│   ├── options.lua
-│   ├── plugins
-│   │   └── init.lua
-│   ├── themes
-│   │   ├── catppuccin.lua
-│   │   ├── init.lua
-│   │   └── rose-pine.lua
-│   ├── treesitter.lua
-│   └── ui
-│   ├── colorful-winsep.lua
-│   ├── folding.lua
-│   ├── grapple.lua
-│   ├── highlight-colors.lua
-│   ├── indent.lua
-│   ├── init.lua
-│   ├── mini-indent.lua
-│   ├── notifications.lua
-│   ├── oil.lua
-│   ├── reactive.lua
-│   ├── smear.lua
-│   ├── snacks-dashboard.lua
-│   ├── snacks-rename.lua
-│   ├── snacks.lua
-│   ├── tiny-diagnostics.lua
-│   └── zen.lua
-├── overlays
-│   └── default.nix
-├── run
-│   ├── setup-ci
-│   └── test-ci
-├── README.md
-├── justfile
-└── stylua.toml
+├── AGENTS.md - contributor instructions and file overview
+├── flake.nix - Nix flake defining packages and dev shell
+├── packages.nix - plugin package specifications
+├── categories.nix - plugin categories and environment settings
+├── init.lua - entry point for the Neovim config
+├── after - runtime configuration executed after plugins load
+│   └── plugin - plugin specific config
+│   └── colors.lua - custom highlight tweaks
+├── lua - root Lua sources
+│   └── nvim - main Lua module
+│   ├── ai - AI helper plugins
+│   │   ├── avante.lua - Avante AI integration
+│   │   ├── chatgpt.lua - ChatGPT prompts
+│   │   ├── init.lua - loads AI plugins
+│   │   └── wtf.lua - debug AI helper
+│   ├── autocmds.lua - autocommand definitions
+│   ├── bars - statusline and tabline modules
+│   │   ├── incline.lua - incline statusline
+│   │   ├── init.lua - loads bar modules
+│   │   ├── lualine.lua - lualine statusline
+│   │   ├── slimline.lua - slimline statusline
+│   │   └── tabby.lua - tabby tabline
+│   ├── completions - completion sources
+│   │   ├── blink-cmp.lua - blink completion
+│   │   ├── copilot.lua - GitHub Copilot source
+│   │   ├── init.lua - loads completions
+│   │   └── neogen.lua - docs generation
+│   ├── debug - debugging setup
+│   │   └── init.lua - debugging helpers
+│   ├── git - git integration modules
+│   │   ├── diffview.lua - diffview setup
+│   │   ├── gitsigns.lua - git signs config
+│   │   ├── init.lua - loads git modules
+│   │   ├── neogit.lua - Neogit config
+│   │   └── octo.lua - GitHub interactions
+│   ├── init.lua - loads all nvim modules
+│   ├── keymaps - keyboard mappings
+│   │   ├── init.lua - loads keymaps
+│   │   ├── keymaps-plugins.lua - plugin bindings
+│   │   ├── keymaps-snacks.lua - snack bindings
+│   │   ├── keymaps.lua - core mappings
+│   │   └── whichkey.lua - which-key menu
+│   ├── literate - literate programming tools
+│   │   ├── init.lua - loads literate tools
+│   │   ├── iron.lua - REPL management
+│   │   └── neopyter.lua - Jupyter helpers
+│   ├── lsps - LSP configuration
+│   │   ├── diagnostic-signs.lua - diagnostic icons
+│   │   ├── formatters.lua - formatter configs
+│   │   ├── init.lua - loads LSP modules
+│   │   ├── linters.lua - linter configs
+│   │   ├── lsp.lua - LSP setup
+│   │   ├── lspsaga.lua - lspsaga UI
+│   │   ├── servers.lua - server definitions
+│   │   └── symbol-usage.lua - symbol UI
+│   ├── misc - misc helper plugins
+│   │   ├── comment.lua - comment toggler
+│   │   ├── flash.lua - jump helper
+│   │   ├── init.lua - loads misc
+│   │   ├── mini-files.lua - mini file explorer
+│   │   ├── mini.lua - minilib setup
+│   │   ├── obsidian.lua - obsidian notes
+│   │   ├── render-markdown.lua - markdown renderer
+│   │   ├── search-replace.lua - search and replace
+│   │   └── session.lua - session management
+│   ├── options.lua - vim options
+│   ├── plugins - plugin manager
+│   │   └── init.lua - plugin definitions
+│   ├── themes - color themes
+│   │   ├── catppuccin.lua - catppuccin theme
+│   │   ├── init.lua - loads themes
+│   │   └── rose-pine.lua - rose-pine theme
+│   ├── treesitter.lua - treesitter setup
+│   └── ui - UI enhancements
+│   ├── colorful-winsep.lua - window separators
+│   ├── folding.lua - folding visuals
+│   ├── grapple.lua - quick navigation
+│   ├── highlight-colors.lua - highlight color codes
+│   ├── indent.lua - indentation guides
+│   ├── init.lua - loads UI modules
+│   ├── mini-indent.lua - minimal indent guides
+│   ├── notifications.lua - notification system
+│   ├── oil.lua - file browser
+│   ├── reactive.lua - reactive UI helpers
+│   ├── smear.lua - smear plugin setup
+│   ├── snacks-dashboard.lua - snacks dashboard
+│   ├── snacks-rename.lua - rename popup
+│   ├── snacks.lua - snacks utilities
+│   ├── tiny-diagnostics.lua - slim diagnostics
+│   └── zen.lua - zen mode
+├── overlays - additional Nix overlays
+│   └── default.nix - optional custom overlay
+├── run - helper scripts
+│   ├── setup-ci - CI environment bootstrap
+│   └── test-ci - minimal CI check
+├── README.md - usage instructions
+├── justfile - command shortcuts
+└── stylua.toml - Lua formatter settings
