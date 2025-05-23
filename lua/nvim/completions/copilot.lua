@@ -12,7 +12,7 @@ require('lze').load {
           auto_trigger = true,
           hide_during_completion = true,
           keymap = {
-            accept = '<C-l>',
+            accept = '<Tab>',
             accept_word = false,
             next = '<A-n>',
             prev = '<A-p>',

@@ -167,6 +167,7 @@ nix run .#nvim
 - `<C-x>` — diagnostics list
 - `<C-a>` — toggle Avante
 - `<C-s>` — save file
+- `<Tab>` — accept AI suggestion (Copilot)
 - `<Leader>qb` `<Leader>qB` `<Leader>qw` `<Leader>qt` `<Leader>qa` — close buffers/windows/tabs
 - `<` / `>` in visual mode — keep selection while indenting
 - `Q` — run macro in register `q`
