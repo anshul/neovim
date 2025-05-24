@@ -99,6 +99,7 @@
             markdownlint.enable = true;
             alejandra.enable = true;
             stylua.enable = true;
+            prettier.enable = true;
           };
         };
       };

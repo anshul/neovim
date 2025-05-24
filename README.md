@@ -1,7 +1,7 @@
 # neovim
 
-An opinionated AI first nix neovim config.  This should be easy to use, have a vim aesthetic, and be fast.
-It should also be a reasonable replacement for a well configured vs code / cursor.
+An opinionated AI first nix neovim config. This should be easy to use, have a vim aesthetic, and be fast. It should also be a reasonable replacement for a well
+configured vs code / cursor.
 
 ## Usage
 
@@ -185,7 +185,8 @@ nix run .#nvim
 ### LSP & Tools
 
 - `gD` `gt` `gi` — LSP declaration/type/implementation
-- `<leader>le` `<leader>la` `<leader>lp` `<leader>lf` `<leader>li` `[d` `]d` `<leader>ll` `<leader>lo` `<leader>lI` `<leader>lO` `gd` — diagnostics and navigation
+- `<leader>le` `<leader>la` `<leader>lp` `<leader>lf` `<leader>li` `[d` `]d` `<leader>ll` `<leader>lo` `<leader>lI` `<leader>lO` `gd` — diagnostics and
+  navigation
 - `<Leader>lr` — incremental rename
 - `<Leader>lg` — generate docs
 - `<Leader>lh` — show highlight group

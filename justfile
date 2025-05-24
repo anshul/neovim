@@ -31,6 +31,7 @@ check:
 fix:
     set -x
     alejandra .
+    prettier --write --prose-wrap always --print-width 160 **/*.md
     markdownlint -f "**/*.md"
     ruff check --fix .
     ruff format .
