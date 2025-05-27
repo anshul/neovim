@@ -81,6 +81,22 @@
         "type": "github"
       }
     },
+    "plugins-claude-vim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1747935050,
+        "narHash": "sha256-wPb4gReDoxT38ub7auP1kry5HE8HkrhJa9Elre9QNRk=",
+        "owner": "pasky",
+        "repo": "claude.vim",
+        "rev": "06baac1ed4503e6c642193c56a27238ca67b5911",
+        "type": "github"
+      },
+      "original": {
+        "owner": "pasky",
+        "repo": "claude.vim",
+        "type": "github"
+      }
+    },
     "plugins-colorful-winsep-nvim": {
       "flake": false,
       "locked": {
@@ -313,6 +329,7 @@
       "inputs": {
         "nixCats": "nixCats",
         "nixpkgs": "nixpkgs",
+        "plugins-claude-vim": "plugins-claude-vim",
         "plugins-colorful-winsep-nvim": "plugins-colorful-winsep-nvim",
         "plugins-early-retirement-nvim": "plugins-early-retirement-nvim",
         "plugins-incline-nvim": "plugins-incline-nvim",
