@@ -146,7 +146,7 @@ in
         iron-nvim
         copilot-lua
         neogen
-        ChatGPT-nvim
+        copilot-chat-nvim
         wtf-nvim
         nvim-dap
         nvim-dap-ui
