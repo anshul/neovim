@@ -21,7 +21,6 @@ require('lze').load {
         { '<leader>g', group = '+Git' },
         { '<leader>h', group = '+Git hunk' },
         { '<leader>i', group = '+Iron' },
-        { '<leader>j', group = '+Neopyter' },
         { '<leader>l', group = '+LSP' },
         { '<leader>m', group = '+Grapple' },
         { '<leader>n', group = '+Notes' },

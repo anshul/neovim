@@ -18,7 +18,10 @@
     },
     "gitignore": {
       "inputs": {
-        "nixpkgs": ["pre-commit-hooks", "nixpkgs"]
+        "nixpkgs": [
+          "pre-commit-hooks",
+          "nixpkgs"
+        ]
       },
       "locked": {
         "lastModified": 1709087332,
@@ -193,22 +196,6 @@
         "type": "github"
       }
     },
-    "plugins-neopyter": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1742273862,
-        "narHash": "sha256-dNUNWvMESeDfbLVLymW9nvLuhQGJoV26JaL7V8NQvF0=",
-        "owner": "SUSTech-data",
-        "repo": "neopyter",
-        "rev": "8716511f2a0d1500ba8f4adeb05bbb432a080bac",
-        "type": "github"
-      },
-      "original": {
-        "owner": "SUSTech-data",
-        "repo": "neopyter",
-        "type": "github"
-      }
-    },
     "plugins-possession-nvim": {
       "flake": false,
       "locked": {
@@ -336,7 +323,6 @@
         "plugins-lze": "plugins-lze",
         "plugins-lzextras": "plugins-lzextras",
         "plugins-maximize-nvim": "plugins-maximize-nvim",
-        "plugins-neopyter": "plugins-neopyter",
         "plugins-possession-nvim": "plugins-possession-nvim",
         "plugins-reactive-nvim": "plugins-reactive-nvim",
         "plugins-slimline-nvim": "plugins-slimline-nvim",
