@@ -112,6 +112,7 @@
             just
             nodejs_22
             bun
+            gh
           ];
           buildInputs = self.checks.${system}.pre-commit-check.enabledPackages;
           shellHook = ''
