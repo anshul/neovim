@@ -37,9 +37,6 @@ require('lze').load {
               ['il'] = '@loop.inner',
               ['as'] = '@conditional.outer', -- conditionals
               ['is'] = '@conditional.inner',
-              -- neopyter
-              ['aj'] = { query = '@cell', desc = 'Select cell' },
-              ['ij'] = { query = '@cellcontent', desc = 'Select cell content' },
             },
           },
           move = {
