@@ -49,3 +49,4 @@ tags
 /bun.lock
 /node_modules
 /package.json
+.claude/settings.local.json
