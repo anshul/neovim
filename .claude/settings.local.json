@@ -1,0 +1,6 @@
+{
+  "permissions": {
+    "allow": ["Bash(busted tests/integration_spec.lua:*)"],
+    "deny": []
+  }
+}
