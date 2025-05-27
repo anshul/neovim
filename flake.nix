@@ -113,6 +113,10 @@
             nodejs_22
             bun
             gh
+            entr # for file watching in TDD
+            luajit # lua runtime for tests
+            luajitPackages.busted # lua testing framework
+            luajitPackages.luafilesystem # required by busted
           ];
           buildInputs = self.checks.${system}.pre-commit-check.enabledPackages;
           shellHook = ''

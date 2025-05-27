@@ -16,8 +16,13 @@
       "Bash(cat:*)",
       "Bash(echo:*)",
       "Bash(touch:*)",
-      "Bash(mkdir:*)"
+      "Bash(mkdir:*)",
+      "Bash(just:*)",
+      "Bash(git:*)",
+      "Bash(gh:*)",
+      "Bash(nix develop:*)"
     ],
     "deny": ["Bash(rm:-rf)"]
-  }
+  },
+  "includeCoAuthoredBy": false
 }
