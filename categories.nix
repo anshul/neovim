@@ -177,7 +177,7 @@ in
         smear-cursor-nvim
         pkgs.neovimPlugins.possession-nvim
         pkgs.neovimPlugins.websocket-nvim
-        pkgs.neovimPlugins.neopyter
+        # pkgs.neovimPlugins.neopyter # Temporarily disabled due to loading error
         pkgs.neovimPlugins.colorful-winsep-nvim
         pkgs.neovimPlugins.reactive-nvim
         pkgs.neovimPlugins.symbol-usage-nvim

@@ -98,8 +98,7 @@
 
 ### `./lua/nvim/literate`
 
-- `init.lua` – loads Neopyter & Iron.
-- `neopyter.lua` – direct Jupyter client, cell run maps, `:NewNotebook`.
+- `init.lua` – loads Iron.
 - `iron.lua` – REPL manager, ipython & zsh presets, `<space>i*` keymaps.
 
 ### `./lua/nvim/ui`
@@ -155,7 +154,6 @@
 - `./lua/nvim/misc/obsidian.lua` – Obsidian note‑taking shortcuts (`<leader>n…`).
 - `./lua/nvim/misc/mini-files.lua` – mini.files explorer (`g.`, `⌃x/⌃v/⌃t`, sync).
 - `./lua/nvim/misc/search-replace.lua` – search & replace commands (`<leader>sr`, `<leader>sR`).
-- `./lua/nvim/literate/neopyter.lua` – Jupyter cell/run controls (`<leader>j*`).
 - `./lua/nvim/ui/folding.lua` – fold control keys (`zR`, `zM`, `zK`).
 - `./lua/nvim/ui/grapple.lua` – bookmark tag & jump keys (`<leader>m…`, `[g`, `]g`).
 - `./lua/nvim/ui/indent.lua` – toggle indent guides (`<leader>ii`).
