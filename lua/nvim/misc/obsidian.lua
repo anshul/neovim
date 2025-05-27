@@ -3,12 +3,17 @@ require('lze').load {
     'obsidian.nvim',
     event = { 'DeferredUIEnter' },
     after = function(_)
+      local obsidian_path = vim.fn.expand '~/Documents/Obsidian'
+      if vim.fn.isdirectory(obsidian_path) == 0 then
+        vim.fn.mkdir(obsidian_path, 'p')
+      end
+
       require('obsidian').setup {
         disable_frontmatter = true,
         workspaces = {
           {
-            name = 'Ideaverse',
-            path = '~/Documents/Ideaverse',
+            name = 'Obsidian',
+            path = '~/Documents/Obsidian',
           },
         },
         new_notes_location = 'notes_subdir',

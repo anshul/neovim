@@ -3,7 +3,21 @@
 An opinionated AI first nix neovim config. This should be easy to use, have a vim aesthetic, and be fast. It should also be a reasonable replacement for a well
 configured vs code / cursor.
 
-## Usage
+## Quick Try
+
+Run the configuration without adding it to your setup:
+
+```bash
+nix run github:anshul/neovim#nvim
+```
+
+From a local checkout you can instead execute:
+
+```bash
+nix run .#nvim
+```
+
+## Installation
 
 ### With home-manager
 
@@ -29,19 +43,18 @@ outputs = { self, nixpkgs, neovim, ... }:
 }
 ```
 
-### Quick try with `nix run`
+## Obsidian Integration
 
-Run the configuration without adding it to your setup:
+This configuration includes Obsidian.nvim for note-taking with the following features:
 
-```bash
-nix run github:anshul/neovim#nvim
-```
+- **Auto-creates** `~/Documents/Obsidian` directory on first use
+- **Wiki-style links** and note templates
+- **Daily notes** with automatic date formatting
+- **Quick navigation** between notes with fuzzy finding
+- **Backlinks** and link management
+- **Image attachments** support
 
-From a local checkout you can instead execute:
-
-```bash
-nix run .#nvim
-```
+The Obsidian vault will be automatically created at `~/Documents/Obsidian` when you first use any Obsidian command.
 
 ## Plugins
 
