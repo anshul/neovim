@@ -46,7 +46,5 @@ tags
 .pre-commit-config.yaml
 
 # claude
-/bun.lock
 /node_modules
-/package.json
 .claude/settings.local.json
