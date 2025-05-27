@@ -159,13 +159,7 @@ end
 require('lze').load {
   {
     'lualine.nvim',
-    load = function(name)
-      require('lzextras').loaders.multi {
-        name,
-        'noice.nvim',
-        'grapple.nvim',
-      }
-    end,
+    dep = { 'noice.nvim', 'grapple.nvim' },
     after = function(_)
       local custom_catppuccin = require 'lualine.themes.catppuccin-mocha'
       custom_catppuccin.normal.c.bg = colors.base
@@ -175,7 +169,7 @@ require('lze').load {
         return
       end
 
-      local cmd = {
+      local command_status = {
         function()
           return require('noice').api.status.command.get()
         end,
@@ -219,7 +213,7 @@ require('lze').load {
           lualine_x = {
             macro,
             search,
-            cmd,
+            command_status,
             'encoding',
           },
           lualine_y = { branch, diff },

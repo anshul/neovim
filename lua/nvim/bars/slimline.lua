@@ -1,28 +1,23 @@
 require('lze').load {
   {
     'slimline-nvim',
-    load = function(name)
-      require('lzextras').loaders.multi {
-        name,
-        'noice.nvim',
-        'grapple.nvim',
-      }
-    end,
+    dep = { 'noice.nvim', 'grapple.nvim' },
     after = function(_)
       local grapple_status = function()
         local status_ok, grapple = pcall(require, 'grapple')
-        local grapple_status_text
         if not status_ok then
-          grapple_status_text = ''
-        else
-          grapple_status_text = grapple.statusline {}
+          return ''
+        end
+        local grapple_status_text = grapple.statusline {}
+        if grapple_status_text == '' or grapple_status_text == nil then
+          return ''
         end
         local output_text_lhs = '󰛢'
         local output_text_rhs = string.sub(grapple_status_text, 6):gsub('%s+$', '')
-        local h = require 'slimline.highlights'
-        local c = require('slimline').config
-        local comp = h.hl_component({ primary = output_text_lhs, secondary = output_text_rhs }, h.hls.components['diagnostics'], c.sep)
-        return comp
+        if output_text_rhs == '' then
+          return ''
+        end
+        return output_text_lhs .. ' ' .. output_text_rhs
       end
 
       require('slimline').setup {
