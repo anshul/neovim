@@ -20,7 +20,8 @@
       "Bash(just:*)",
       "Bash(git:*)",
       "Bash(gh:*)",
-      "Bash(nix develop:*)"
+      "Bash(nix develop:*)",
+      "Bash(nix build:*)"
     ],
     "deny": ["Bash(rm:-rf)"]
   },
