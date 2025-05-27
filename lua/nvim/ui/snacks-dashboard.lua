@@ -38,8 +38,8 @@ M.dashboard = {
       {
         icon = '󰚩 ',
         key = '<C-g>',
-        desc = 'AI Chat (ChatGPT)',
-        action = ':ChatGPT',
+        desc = 'Copilot Chat',
+        action = ':CopilotChatToggle',
       },
       {
         icon = ' ',
