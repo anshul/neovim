@@ -1,0 +1,8 @@
+return {
+  default = {
+    ROOT = {"."},
+    pattern = ".*_spec%.lua$",
+    lua = "luajit",
+    lpath = "./lua/?.lua;./lua/?/init.lua"
+  }
+}

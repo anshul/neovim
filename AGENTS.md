@@ -5,21 +5,26 @@
 - This repository is a Neovim configuration built with **Nix** and **Lua**.
 - Always update `AGENTS.md` after major structural changes (creating / deleting files, repurposing directories, files).
 - Always update `README.md` when keyboard shortcuts change, and verify all information is accurate.
-- The `nix develop` shell provides `just`, `alejandra`, `markdownlint`, `prettier`, `ruff`, `stylua`, and `shellcheck` for linting / formatting.
+- Always run `just fix` after making changes to ensure code formatting and linting standards are met.
+- The `nix develop` shell provides `just`, `alejandra`, `markdownlint`, `prettier`, `ruff`, `stylua`, `shellcheck` for linting / formatting, and `busted` with
+  `luajit` for testing.
 
 ## Coding Conventions
 
 - Use **2‑space indentation** for every language.
 - Keep code comments concise and relevant.
 - Enter the dev environment with `nix develop` before running any tooling.
+- Don't say co-authored by claude in commit messages
 
 ## Project Overview (ordered by day‑to‑day importance)
 
 ### `./`
 
-- `flake.nix` – repository flake: declares Nix inputs, exports packages/devShells/overlays, and wires NixOS + Home Manager modules.
-- `categories.nix` – plugin & dependency catalogue used by nixCats: env vars, runtime deps, startup & optional plugin sets.
+- `flake.nix` – repository flake: declares Nix inputs, exports packages/devShells/overlays, and wires NixOS + Home Manager modules.
+- `categories.nix` – plugin & dependency catalogue used by nixCats: env vars, runtime deps, startup & optional plugin sets.
 - `packages.nix` – defines the `nvim` package (settings, categories, extra overrides) that nixCats builds.
+- `justfile` – handy Just tasks (run, update, lint, fix, test, etc.).
+- `CLAUDE.md` – project instructions and coding conventions for AI assistants.
 - Other root helpers – `.gitignore`, `.editorconfig`, `LICENSE`, etc., handle repo housekeeping.
 
 ### `./lua/nvim`
@@ -54,7 +59,7 @@
 ### `./lua/nvim/completions`
 
 - `blink-cmp.lua` – primary completion engine (keymaps, sources, signature pop‑ups).
-- `copilot.lua` – Copilot inline suggestions (model `gpt‑4o‑copilot`).
+- `copilot.lua` – Copilot inline suggestions (model `gpt‑4o‑copilot`).
 - `neogen.lua` – docstring generator (NumpyDoc / TSDoc).
 - `init.lua` – simply requires the above three.
 
@@ -63,7 +68,7 @@
 - `init.lua` – loads AI helpers.
 - `avante.lua` – **avante.nvim** with Copilot backend (`o4-mini`), planning & hints on, autosuggest off.
 - `wtf.lua` – **wtf.nvim** diagnostic explain / fix (`<Leader>cd/‌cs`).
-- `chatgpt.lua` – **ChatGPT.nvim** wrapper (model `gpt‑4.1‑mini`).
+- `chatgpt.lua` – **ChatGPT.nvim** wrapper (model `gpt‑4.1‑mini`).
 
 ### `./lua/nvim/bars`
 
@@ -103,7 +108,7 @@
   Grapple, Reactive highlights, Folding/UFO, Colorful‑winsep, Zen‑mode/Twilight, Smear‑cursor).
 - `colorful-winsep.lua` – draws colourful window separators with Unicode box‑drawing characters.
 - `folding.lua` – configures **nvim‑ufo** advanced folds, custom virtual text handler, and `zR`/`zM`/`zK` keymaps.
-- `grapple.lua` – sets up **grapple.nvim** bookmarks; `<leader>m…` keys to tag/jump, `[g` `\]g` cycle.
+- `grapple.lua` – sets up **grapple.nvim** bookmarks; `<leader>m…` keys to tag/jump, `[g` `\]g` cycle.
 - `highlight-colors.lua` – shows CSS/Tailwind colours inline via **nvim‑highlight‑colors** virtual text.
 - `indent.lua` – lazy‑loads **indent‑blankline.nvim**, adds `<leader>ii` toggle; smart indent cap and filetype excludes.
 - `mini-indent.lua` – enables **mini.indentscope** border guides except for helper buffers.
@@ -125,7 +130,7 @@
 
 ### `./lua/nvim/misc`
 
-- `init.lua` – orchestrates the Misc stack (Mini helpers, sessions, comments, Flash navigation, Obsidian integration, Markdown rendering, search & replace).
+- `init.lua` – orchestrates the Misc stack (Mini helpers, sessions, comments, Flash navigation, Obsidian integration, Markdown rendering, search & replace).
 - `mini.lua` – bundles **mini.nvim** modules: AI text‑objects, animate (open/close only), basic options, glyph icons, move lines/blocks, operators
   (exchange/sort), surround.
 - `mini-files.lua` – floating file explorer (`<leader>/`) with dot‑file toggle (`g.`) and split
@@ -139,7 +144,8 @@
 - `.pre-commit-config.yaml` – auto‑generated hooks (alejandra, ruff, shellcheck, stylua, markdownlint).
 - `.stylua.toml` – Stylua formatting rules for Lua code.
 - `stylua.toml` – fallback Stylua config for CI.
-- `justfile` – handy Just tasks (run, update, lint, fix, etc.).
+- `.busted` – Busted test framework configuration (LuaJIT runtime, test pattern).
+- `justfile` – handy Just tasks (run, update, lint, fix, test, etc.).
 
 ## Keyboard mappings
 
@@ -155,3 +161,20 @@
 - `./lua/nvim/ui/indent.lua` – toggle indent guides (`<leader>ii`).
 - `./lua/nvim/ui/zen.lua` – zen & twilight toggles (`<leader>zz`, `<leader>zt`).
 - `./lua/nvim/ui/oil.lua` – `-` to open Oil file explorer.
+
+### `./tests`
+
+- `example_spec.lua` – example test file demonstrating TDD setup with busted framework.
+
+### `./after/plugin`
+
+- `colors.lua` – post-plugin color overrides and theme customizations.
+
+### `./overlays`
+
+- `default.nix` – Nix overlays for custom package modifications.
+
+### `./run`
+
+- `setup-ci` – CI setup script.
+- `test-ci` – CI test execution script.
