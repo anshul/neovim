@@ -26,6 +26,7 @@ in
     lspsAndRuntimeDeps = with pkgs; {
       general = [
         nodejs_24
+        nodePackages.npm
         ripgrep
         fd
         imagemagick
@@ -184,6 +185,7 @@ in
         pkgs.neovimPlugins.early-retirement-nvim
         pkgs.neovimPlugins.timber-nvim
         pkgs.neovimPlugins.maximize-nvim
+        # pkgs.neovimPlugins.deepwiki-nvim # Community plugin - may need manual installation
       ];
     };
 

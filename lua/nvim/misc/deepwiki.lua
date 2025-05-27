@@ -1,0 +1,34 @@
+-- MCP DeepWiki integration (manual setup required)
+-- To use MCP DeepWiki, install the npm package globally:
+-- npm install -g @ofseed/mcp-deepwiki
+--
+-- Or install the deepwiki.nvim plugin manually if available:
+-- require('lze').load {
+--   {
+--     'ofseed/deepwiki.nvim',
+--     event = { 'DeferredUIEnter' },
+--     after = function(_)
+--       require('deepwiki').setup {
+--         -- MCP DeepWiki configuration
+--         server_command = { 'npx', '-y', '@ofseed/mcp-deepwiki' },
+--         server_name = 'deepwiki',
+--
+--         -- Optional configuration
+--         timeout = 30000, -- 30 seconds timeout
+--
+--         -- UI options
+--         ui = {
+--           border = 'rounded',
+--           height = 0.8,
+--           width = 0.8,
+--         },
+--
+--         -- Default search options
+--         search = {
+--           limit = 10,
+--           snippet_length = 200,
+--         },
+--       }
+--     end,
+--   },
+-- }

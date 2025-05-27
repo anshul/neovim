@@ -15,6 +15,7 @@ inputs: let
   inherit (inputs.nixCats) utils;
   overlaySet = {
     # example = import ./example.nix;
+    # deepwiki = import ./deepwiki.nix; # Commented out temporarily - community plugin may not be available
   };
   extra = [
     (utils.sanitizedPluginOverlay inputs)
