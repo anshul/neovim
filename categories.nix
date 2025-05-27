@@ -146,7 +146,7 @@ in
         iron-nvim
         copilot-lua
         neogen
-        copilot-chat-nvim
+        CopilotChat-nvim
         wtf-nvim
         nvim-dap
         nvim-dap-ui

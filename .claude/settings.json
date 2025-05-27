@@ -21,7 +21,9 @@
       "Bash(git:*)",
       "Bash(gh:*)",
       "Bash(rm:*)",
+      "Bash(nix-env:*)",
       "Bash(nix develop:*)",
+      "Bash(nix run:*)",
       "Bash(nix flake:*)",
       "Bash(nix build:*)"
     ],
