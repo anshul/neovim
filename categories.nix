@@ -146,7 +146,6 @@ in
         iron-nvim
         copilot-lua
         neogen
-        avante-nvim
         ChatGPT-nvim
         wtf-nvim
         nvim-dap
@@ -185,6 +184,7 @@ in
         pkgs.neovimPlugins.early-retirement-nvim
         pkgs.neovimPlugins.timber-nvim
         pkgs.neovimPlugins.maximize-nvim
+        pkgs.neovimPlugins.claude-vim
         # pkgs.neovimPlugins.deepwiki-nvim # Community plugin - may need manual installation
       ];
     };

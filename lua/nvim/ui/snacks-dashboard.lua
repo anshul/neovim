@@ -37,9 +37,15 @@ M.dashboard = {
       },
       {
         icon = '󰚩 ',
-        key = '<C-a>',
-        desc = 'Start Avante (AI)',
-        action = ':AvanteToggle',
+        key = '<C-g>',
+        desc = 'AI Chat (ChatGPT)',
+        action = ':ChatGPT',
+      },
+      {
+        icon = ' ',
+        key = '<leader>cc',
+        desc = 'Claude Chat',
+        action = ':ClaudeChat',
       },
       {
         icon = ' ',
