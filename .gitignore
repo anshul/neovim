@@ -44,3 +44,8 @@ tags
 /result
 .direnv
 .pre-commit-config.yaml
+
+# claude
+/bun.lock
+/node_modules
+/package.json

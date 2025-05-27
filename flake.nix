@@ -1,5 +1,5 @@
 {
-  description = "Neovim configuration using nixCats";
+  description = "An opinionated AI-first Nix Neovim configuration";
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     nixCats.url = "github:BirdeeHub/nixCats-nvim";
@@ -110,9 +110,22 @@
           packages = with pkgs; [
             # defaultPackage
             just
+            nodejs_22
+            bun
           ];
-          inherit (self.checks.${system}.pre-commit-check) shellHook;
           buildInputs = self.checks.${system}.pre-commit-check.enabledPackages;
+          shellHook = ''
+            ${self.checks.${system}.pre-commit-check.shellHook}
+
+            # Add local node_modules/.bin to PATH for project-local packages
+            export PATH="$PWD/node_modules/.bin:$PATH"
+
+            echo "Installing Claude Code locally in project..."
+            if [ ! -f "node_modules/.bin/claude" ]; then
+              bun install @anthropic-ai/claude-code
+            fi
+            echo "Claude Code version: $(claude --version)"
+          '';
         };
       };
     })
