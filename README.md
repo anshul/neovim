@@ -1,7 +1,7 @@
 # neovim
 
-An opinionated AI first nix neovim config. This should be easy to use, have a vim aesthetic, and be fast. It should also be a reasonable replacement for a well
-configured vs code / cursor.
+An opinionated AI-first Nix Neovim config designed for use with GitHub Copilot and Claude Code. This should be easy to use, have a vim aesthetic, and be fast.
+It should also be a reasonable replacement for a well-configured VS Code / Cursor setup.
 
 ## Quick Try
 
@@ -120,7 +120,7 @@ The Obsidian vault will be automatically created at `~/Documents/Obsidian` when 
 - `iron-nvim`
 - `copilot-lua`
 - `neogen`
-- `avante-nvim`
+- `claude.vim`
 - `ChatGPT-nvim`
 - `wtf-nvim`
 - `nvim-dap`
@@ -178,7 +178,7 @@ The Obsidian vault will be automatically created at `~/Documents/Obsidian` when 
 - `<C-b>` — buffer finder
 - `<C-d>` — close buffer
 - `<C-x>` — diagnostics list
-- `<C-a>` — toggle Avante
+- `<C-g>` — open ChatGPT
 - `<C-s>` — save file
 - `<Tab>` — accept AI suggestion (Copilot)
 - `<Leader>qb` `<Leader>qB` `<Leader>qw` `<Leader>qt` `<Leader>qa` — close buffers/windows/tabs
@@ -204,9 +204,13 @@ The Obsidian vault will be automatically created at `~/Documents/Obsidian` when 
 - `<Leader>lg` — generate docs
 - `<Leader>lh` — show highlight group
 
-### AI/ChatGPT
+### AI/Claude/ChatGPT
 
-- `<leader>cg` `<leader>ca` `<leader>ce` `<leader>cr` — ChatGPT actions
+- `<leader>cc` — Claude chat interface
+- `<leader>ca` — Claude ask (selection/prompt)
+- `<leader>ci` — Claude implement (selection/prompt)
+- `<leader>cr` — Claude review (selection/prompt)
+- `<leader>cg` — Claude generate (selection/prompt)
 - `<leader>cd` `<leader>cs` — debug/search diagnostics with AI (wtf.nvim)
 
 ### Debugging (DAP)

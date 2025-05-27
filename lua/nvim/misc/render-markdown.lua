@@ -8,7 +8,7 @@ require('lze').load {
         name,
       }
     end,
-    ft = { 'markdown', 'Avante', 'quarto' },
+    ft = { 'markdown', 'quarto' },
     after = function(_)
       require('render-markdown').setup {
         preset = 'obsidian',
@@ -49,7 +49,7 @@ require('lze').load {
         checkbox = {
           checked = { scope_highlight = '@markup.strikethrough' },
         },
-        file_types = { 'markdown', 'Avante', 'quarto' },
+        file_types = { 'markdown', 'quarto' },
       }
     end,
   },

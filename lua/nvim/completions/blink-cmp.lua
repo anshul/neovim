@@ -100,9 +100,6 @@ require('lze').load {
             'path',
             'snippets',
             'buffer',
-            'avante_commands',
-            'avante_mentions',
-            'avante_files',
           },
           providers = {
             lazydev = {
@@ -113,18 +110,6 @@ require('lze').load {
             neopyter = {
               name = 'Neopyter',
               module = 'neopyter.blink',
-            },
-            avante_commands = {
-              name = 'avante_commands',
-              module = 'blink.compat.source',
-            },
-            avante_mentions = {
-              name = 'avante_mentions',
-              module = 'blink.compat.source',
-            },
-            avante_files = {
-              name = 'avante_files',
-              module = 'blink.compat.source',
             },
           },
         },
