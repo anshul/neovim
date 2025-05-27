@@ -1,6 +1,11 @@
 require('lze').load {
   {
+    'plenary.nvim',
+    lazy = false,
+  },
+  {
     'obsidian.nvim',
+    dep = { 'plenary.nvim' },
     event = { 'DeferredUIEnter' },
     after = function(_)
       local obsidian_path = vim.fn.expand '~/Documents/Obsidian'

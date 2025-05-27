@@ -1,6 +1,8 @@
 {
   "permissions": {
     "allow": [
+      "mcp__deep-wiki__read_wiki_contents",
+      "mcp__deep-wiki__ask_question",
       "Bash(node:*)",
       "Bash(npm:*)",
       "Bash(npx:*)",

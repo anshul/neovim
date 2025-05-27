@@ -26,8 +26,8 @@ M.dashboard = {
       {
         icon = ' ',
         key = '<C-n>',
-        desc = 'Take notes',
-        action = ':ObsidianQuickSwitch',
+        desc = 'New note',
+        action = ':ObsidianNew',
       },
       {
         icon = ' ',
