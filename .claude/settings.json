@@ -21,6 +21,7 @@
       "Bash(busted:*)",
       "Bash(git:*)",
       "Bash(gh:*)",
+      "Bash(rg:*)",
       "Bash(rm:*)",
       "Bash(nix-env:*)",
       "Bash(nix develop:*)",

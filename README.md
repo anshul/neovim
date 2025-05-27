@@ -152,7 +152,6 @@ The Obsidian vault will be automatically created at `~/Documents/Obsidian` when 
 - `smear-cursor-nvim`
 - `possession-nvim`
 - `websocket-nvim`
-- `neopyter`
 - `colorful-winsep-nvim`
 - `reactive-nvim`
 - `symbol-usage-nvim`
