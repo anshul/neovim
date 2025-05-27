@@ -63,6 +63,33 @@ tdd:
     echo "Starting TDD loop - watching lua/ and tests/ for changes..."
     find lua/ tests/ -name "*.lua" 2>/dev/null | entr -c just test
 
+logs:
+    #!/usr/bin/env bash
+    echo "=== Neovim Logs ==="
+    logdir="$HOME/.local/state/nvim"
+    if [ -d "$logdir" ]; then
+        for log in "$logdir"/*.log "$logdir"/log; do
+            if [ -f "$log" ]; then
+                echo "--- $(basename "$log") ---"
+                cat "$log" || echo "Unable to read $log"
+                echo
+            fi
+        done
+    else
+        echo "Log directory not found: $logdir"
+    fi
+
+clear_logs:
+    #!/usr/bin/env bash
+    echo "Clearing Neovim logs..."
+    logdir="$HOME/.local/state/nvim"
+    if [ -d "$logdir" ]; then
+        rm -f "$logdir"/*.log "$logdir"/log
+        echo "Logs cleared from $logdir"
+    else
+        echo "Log directory not found: $logdir"
+    fi
+
 fix:
     set -x
     alejandra .

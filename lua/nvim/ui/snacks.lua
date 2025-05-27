@@ -27,6 +27,21 @@ require('lze').load {
           enabled = true,
           style = 'compact',
           timeout = 2500,
+          -- Log snacks notifications
+          on_show = function(notif)
+            local log_file = vim.fn.stdpath 'state' .. '/notify.log'
+            local timestamp = os.date '%Y-%m-%d %H:%M:%S'
+            local level_name = notif.level and string.upper(notif.level) or 'INFO'
+            local title = notif.title and (' [' .. notif.title .. ']') or ''
+            local msg = notif.msg or ''
+
+            local log_entry = string.format('[%s] %s%s: %s\n', timestamp, level_name, title, msg)
+            local file = io.open(log_file, 'a')
+            if file then
+              file:write(log_entry)
+              file:close()
+            end
+          end,
         },
         image = {
           enabled = true,

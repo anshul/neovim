@@ -3,10 +3,39 @@ require('lze').load {
     'nvim-notify',
     -- event = { 'DeferredUIEnter' },
     after = function(_)
-      require('notify').setup {
+      local notify = require 'notify'
+      notify.setup {
         level = 'info',
         background_color = '#191724',
       }
+
+      -- Log all notifications to file
+      local log_file = vim.fn.stdpath 'state' .. '/notify.log'
+      local original_notify = notify
+
+      vim.notify = function(msg, level, opts)
+        level = level or vim.log.levels.INFO
+        opts = opts or {}
+
+        -- Write to log file
+        local timestamp = os.date '%Y-%m-%d %H:%M:%S'
+        local level_name = ({
+          [vim.log.levels.DEBUG] = 'DEBUG',
+          [vim.log.levels.INFO] = 'INFO',
+          [vim.log.levels.WARN] = 'WARN',
+          [vim.log.levels.ERROR] = 'ERROR',
+        })[level] or 'UNKNOWN'
+
+        local log_entry = string.format('[%s] %s: %s\n', timestamp, level_name, msg)
+        local file = io.open(log_file, 'a')
+        if file then
+          file:write(log_entry)
+          file:close()
+        end
+
+        -- Call original notify
+        return original_notify(msg, level, opts)
+      end
     end,
   },
   {
