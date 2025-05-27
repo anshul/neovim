@@ -34,7 +34,7 @@ test:
 test_integration:
     #!/usr/bin/env bash
     echo "Running integration tests..."
-    busted tests/simple_spec.lua tests/functional_spec.lua
+    busted tests/simple_spec.lua tests/functional_spec.lua tests/integration_spec.lua
 
 test_unit:
     busted tests/example_spec.lua

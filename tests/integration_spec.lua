@@ -27,6 +27,26 @@ describe('Neovim Integration Tests', function()
       assert.is_true(success, 'Config should load without errors: ' .. (output or ''))
     end)
 
+    it('should start with full config without error messages', function()
+      local success, output = run_nvim_with_config 'messages'
+      assert.is_true(success, 'Config should load successfully: ' .. (output or ''))
+
+      -- Check for common error patterns
+      local error_patterns = {
+        'Error detected',
+        'E%d+:',
+        'error loading module',
+        'stack traceback:',
+        'attempt to call',
+        'attempt to index',
+        'module .* not found',
+      }
+
+      for _, pattern in ipairs(error_patterns) do
+        assert.is_falsy(output:match(pattern), 'Should not contain error pattern "' .. pattern .. '": ' .. (output or ''))
+      end
+    end)
+
     it('should have lua modules accessible', function()
       local success, output = run_nvim_with_config 'lua print(vim.version().major)'
       assert.is_true(success, 'Lua should be accessible: ' .. (output or ''))
