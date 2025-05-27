@@ -24,10 +24,6 @@
       url = "github:AbaoFromCUG/websocket.nvim";
       flake = false;
     };
-    plugins-neopyter = {
-      url = "github:SUSTech-data/neopyter";
-      flake = false;
-    };
     plugins-possession-nvim = {
       url = "github:jedrzejboczar/possession.nvim";
       flake = false;

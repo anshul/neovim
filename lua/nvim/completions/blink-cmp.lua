@@ -11,7 +11,6 @@ require('lze').load {
       require('lzextras').loaders.multi {
         name,
         'lazydev.nvim',
-        'neopyter',
       }
     end,
     after = function(_)
@@ -95,7 +94,6 @@ require('lze').load {
         sources = {
           default = {
             'lazydev',
-            'neopyter',
             'lsp',
             'path',
             'snippets',
@@ -106,10 +104,6 @@ require('lze').load {
               name = 'LazyDev',
               module = 'lazydev.integrations.blink',
               score_offset = 100,
-            },
-            neopyter = {
-              name = 'Neopyter',
-              module = 'neopyter.blink',
             },
           },
         },
