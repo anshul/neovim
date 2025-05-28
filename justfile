@@ -68,13 +68,20 @@ logs:
     echo "=== Neovim Logs ==="
     logdir="$HOME/.local/state/nvim"
     if [ -d "$logdir" ]; then
-        for log in "$logdir"/*.log "$logdir"/log; do
-            if [ -f "$log" ]; then
-                echo "--- $(basename "$log") ---"
+        # Find all log files recursively
+        find "$logdir" -type f \( -name "*.log" -o -name "*log*" -o -name "*.err" -o -name "*.out" \) 2>/dev/null | sort | while read -r log; do
+            if [ -f "$log" ] && [ -s "$log" ]; then
+                # Get relative path from logdir
+                relpath="${log#$logdir/}"
+                echo "--- $relpath ---"
                 cat "$log" || echo "Unable to read $log"
                 echo
             fi
         done
+        # Show message if no logs found
+        if ! find "$logdir" -type f \( -name "*.log" -o -name "*log*" -o -name "*.err" -o -name "*.out" \) 2>/dev/null | grep -q .; then
+            echo "No log files found in $logdir"
+        fi
     else
         echo "Log directory not found: $logdir"
     fi
@@ -84,10 +91,35 @@ clear_logs:
     echo "Clearing Neovim logs..."
     logdir="$HOME/.local/state/nvim"
     if [ -d "$logdir" ]; then
-        rm -f "$logdir"/*.log "$logdir"/log
+        # Remove all log files recursively
+        find "$logdir" -type f \( -name "*.log" -o -name "*log*" -o -name "*.err" -o -name "*.out" \) -delete 2>/dev/null
         echo "Logs cleared from $logdir"
     else
         echo "Log directory not found: $logdir"
+    fi
+
+tail_logs:
+    #!/usr/bin/env bash
+    echo "Tailing debug logs..."
+    logdir="$HOME/.local/state/nvim"
+    snacks_log="$logdir/snacks.log"
+    notifications_log="$logdir/notifications.log"
+    
+    if [ -f "$snacks_log" ] || [ -f "$notifications_log" ]; then
+        # Use tail -f to follow both logs if they exist
+        tail_files=""
+        [ -f "$snacks_log" ] && tail_files="$tail_files $snacks_log"
+        [ -f "$notifications_log" ] && tail_files="$tail_files $notifications_log"
+        
+        echo "Following logs: $tail_files"
+        echo "Press Ctrl+C to stop..."
+        tail -f $tail_files
+    else
+        echo "No debug log files found. Expected:"
+        echo "  $snacks_log"
+        echo "  $notifications_log"
+        echo ""
+        echo "Make sure NVIM_DEBUG_NOTIFY=1 is set and restart Neovim to create these files."
     fi
 
 fix:

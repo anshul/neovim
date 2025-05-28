@@ -48,3 +48,4 @@ tags
 # claude
 /node_modules
 .claude/settings.local.json
+/tmp
