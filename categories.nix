@@ -81,6 +81,8 @@ in
       elixir = [
         elixir
         erlang
+        # Note: credo should be added to your mix.exs dependencies
+        # mix deps.get will install it in your project
       ];
     };
 

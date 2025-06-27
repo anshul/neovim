@@ -106,6 +106,105 @@ servers.lexical = {
   root_dir = function(fname)
     return vim.fs.dirname(vim.fs.find({ 'mix.exs' }, { path = fname, upward = true })[1])
   end,
+  settings = {
+    lexical = {
+      dialyzerEnabled = true,
+      fetchDeps = true,
+      formatOnSave = true,
+      suggestSpecs = true,
+    },
+  },
+  capabilities = {
+    textDocument = {
+      definition = { linkSupport = true },
+      declaration = { linkSupport = true },
+      implementation = { linkSupport = true },
+      typeDefinition = { linkSupport = true },
+      references = { includeDeclaration = true },
+      documentSymbol = {
+        hierarchicalDocumentSymbolSupport = true,
+        symbolKind = {
+          valueSet = {
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+          },
+        },
+      },
+      workspaceSymbol = {
+        symbolKind = {
+          valueSet = {
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+          },
+        },
+      },
+    },
+  },
+  on_attach = function(client, bufnr)
+    if client.server_capabilities.definitionProvider then
+      vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { buffer = bufnr, desc = 'Go to definition' })
+    end
+    if client.server_capabilities.declarationProvider then
+      vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, { buffer = bufnr, desc = 'Go to declaration' })
+    end
+    if client.server_capabilities.implementationProvider then
+      vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, { buffer = bufnr, desc = 'Go to implementation' })
+    end
+    if client.server_capabilities.typeDefinitionProvider then
+      vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition, { buffer = bufnr, desc = 'Go to type definition' })
+    end
+    if client.server_capabilities.referencesProvider then
+      vim.keymap.set('n', 'gr', vim.lsp.buf.references, { buffer = bufnr, desc = 'Find references' })
+    end
+  end,
 }
 
 return servers
