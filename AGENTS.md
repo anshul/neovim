@@ -29,8 +29,8 @@
 
 ### `./lua/nvim`
 
-- `init.lua` – root loader: pulls in options, themes, LSP, completions, treesitter, plugins, UI, bars, git, AI, literate, misc, debug; registers `lze` LSP
-  handlers.
+- `init.lua` – root loader: pulls in options, themes, LSP, completions, treesitter, plugins, UI, bars, git, AI, literate, misc, debug, lang modules;
+  registers `lze` LSP handlers.
 - `options.lua` – baseline UX settings (clipboard, termguicolors, search behaviour, splits, soft‑tabs, folds, listchars, font…).
 - `autocmds.lua` – quality‑of‑life autocommands (trim `cro`; quick‑close transient buffers; auto‑size splits; disable _mini‑indentscope_ in helper buffers;
   force opaque floating windows).
@@ -49,7 +49,7 @@
 
 - `init.lua` – wires LSP stack.
 - `lsp.lua` – extends `lspconfig` with cmp capabilities, buffer‑local `:Format`, **inc‑rename** integration, iterates over `servers.lua`.
-- `servers.lua` – declarative configs for \~25 language servers (Lua, Python, Nix, Go, TS, Rust, etc.).
+- `servers.lua` – declarative configs for \~26 language servers (Lua, Python, Nix, Go, TS, Rust, Elixir, etc.).
 - `diagnostic-signs.lua` – disables virtual text; custom gutter icons.
 - `formatters.lua` – **conform.nvim** auto‑format on save; per‑ft formatter map; `<Leader>lF` manual format.
 - `linters.lua` – **lint.nvim** on save; per‑ft linters.
@@ -99,7 +99,7 @@
 ### `./lua/nvim/literate`
 
 - `init.lua` – loads Iron.
-- `iron.lua` – REPL manager, ipython & zsh presets, `<space>i*` keymaps.
+- `iron.lua` – REPL manager, ipython, zsh & iex presets, `<space>i*` keymaps.
 
 ### `./lua/nvim/ui`
 
@@ -159,6 +159,10 @@
 - `./lua/nvim/ui/indent.lua` – toggle indent guides (`<leader>ii`).
 - `./lua/nvim/ui/zen.lua` – zen & twilight toggles (`<leader>zz`, `<leader>zt`).
 - `./lua/nvim/ui/oil.lua` – `-` to open Oil file explorer.
+
+### `./lua/nvim/lang`
+
+- `elixir.lua` – Elixir language support: elixir-tools.nvim with Lexical LSP, neotest-elixir, vim-endwise.
 
 ### `./tests`
 

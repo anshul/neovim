@@ -17,6 +17,7 @@ require 'nvim.ai'
 require 'nvim.literate'
 require 'nvim.misc'
 require 'nvim.debug'
+require 'nvim.lang.elixir'
 
 require 'nvim.keymaps'
 require 'nvim.autocmds'

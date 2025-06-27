@@ -52,6 +52,7 @@ in
         svelte-language-server
         tailwindcss-language-server
         tinymist
+        lexical
 
         # formatters
         stylua
@@ -75,6 +76,11 @@ in
 
         # dap
         python3Packages.debugpy
+      ];
+
+      elixir = [
+        elixir
+        erlang
       ];
     };
 
@@ -186,6 +192,12 @@ in
         pkgs.neovimPlugins.maximize-nvim
         pkgs.neovimPlugins.claude-vim
         # pkgs.neovimPlugins.deepwiki-nvim # Community plugin - may need manual installation
+      ];
+
+      elixir = with pkgs.vimPlugins; [
+        elixir-tools-nvim
+        neotest-elixir
+        vim-endwise
       ];
     };
 

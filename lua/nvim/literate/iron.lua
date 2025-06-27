@@ -28,6 +28,7 @@ require('lze').load {
               command = { 'ipython', '--no-autoindent' },
               format = common.bracketed_paste_python,
             },
+            elixir = { command = { 'iex' } },
           },
           repl_open_cmd = view.bottom(20),
         },

@@ -111,7 +111,6 @@
             # defaultPackage
             just
             nodejs_22
-            bun
             gh
             entr # for file watching in TDD
             luajit # lua runtime for tests
@@ -122,14 +121,6 @@
           shellHook = ''
             ${self.checks.${system}.pre-commit-check.shellHook}
 
-            # Add local node_modules/.bin to PATH for project-local packages
-            export PATH="$PWD/node_modules/.bin:$PATH"
-
-            echo "Installing Claude Code locally in project..."
-            if [ ! -f "node_modules/.bin/claude" ]; then
-              bun install @anthropic-ai/claude-code
-            fi
-            echo "Claude Code version: $(claude --version)"
           '';
         };
       };

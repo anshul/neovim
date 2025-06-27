@@ -22,6 +22,7 @@ in {
       extra = true;
       gitPlugins = true;
       test = true;
+      elixir = true;
     };
     extra = {
       nixdExtras = {
