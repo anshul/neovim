@@ -31,7 +31,7 @@
 
 - `init.lua` – root loader: pulls in options, themes, LSP, completions, treesitter, plugins, UI, bars, git, AI, literate, misc, debug, lang modules;
   registers `lze` LSP handlers.
-- `options.lua` – baseline UX settings (clipboard, termguicolors, search behaviour, splits, soft‑tabs, folds, listchars, font…).
+- `options.lua` – baseline UX settings (clipboard, termguicolors, search behaviour, splits, soft‑tabs, folds, listchars, font, kitty terminal integration…).
 - `autocmds.lua` – quality‑of‑life autocommands (trim `cro`; quick‑close transient buffers; auto‑size splits; disable _mini‑indentscope_ in helper buffers;
   force opaque floating windows).
 - `treesitter.lua` – lazy‑loads `nvim‑treesitter`, textobjects, context, autotag; provides richer motions (`af/if`, `[f` `]f`), `<C‑Space>` incremental
@@ -82,7 +82,7 @@
 
 - `init.lua` – general utilities: editing (**better‑escape**, **autopairs**, **treesj**, **img‑clip**), navigation (**outline**, **vim‑tmux‑navigator**,
   **maximize**), workflow (**trouble**, **todo‑comments**, **refactoring**, **bqf**, **marks**), writing (**markdown‑preview**, **cloak**), git conflict helper,
-  misc (**early‑retirement**, **timber**).
+  misc (**early‑retirement**, **timber**), terminal integration (**kitty‑scrollback.nvim**).
 
 ### `./lua/nvim/git`
 
