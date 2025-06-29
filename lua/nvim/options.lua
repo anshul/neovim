@@ -59,7 +59,7 @@ vim.cmd [[let &t_Ce = "\e[4:0m"]]
 -- Kitty terminal integration
 if vim.env.TERM == 'xterm-kitty' then
   -- Disable background color erase for kitty
-  vim.opt.t_ut = ''
+  vim.cmd [[let &t_ut='']]
 
   -- Handle cursor colors properly
   vim.api.nvim_create_autocmd('VimEnter', {
