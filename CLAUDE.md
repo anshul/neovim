@@ -1,1 +1,1 @@
-AGENTS.md
+CONTRIBUTORS.md

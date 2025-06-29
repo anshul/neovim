@@ -298,35 +298,4 @@ require('lze').load {
       require('maximize').setup {}
     end,
   },
-  {
-    'kitty-scrollback.nvim',
-    enabled = true,
-    lazy = true,
-    cmd = { 'KittyScrollbackGenerateKittens', 'KittyScrollbackCheckHealth' },
-    event = { 'User KittyScrollbackLaunch' },
-    after = function(_)
-      require('kitty-scrollback').setup {
-        -- Color configuration to prevent conflicts
-        visual_selection_highlight_mode = 'darken',
-
-        -- Search-ready configuration
-        callbacks = {
-          after_ready = function()
-            -- Auto-start in search mode for scrollback
-            if vim.env.KITTY_SCROLLBACK_NVIM == 'true' then
-              vim.defer_fn(function()
-                vim.api.nvim_feedkeys('?', 'n', false)
-              end, 100)
-            end
-          end,
-        },
-
-        -- Handle ANSI colors properly
-        kitty_get_text = {
-          extent = 'all',
-          ansi = true,
-        },
-      }
-    end,
-  },
 }
