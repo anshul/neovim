@@ -8,14 +8,14 @@ require('lze').load {
         panel = { enabled = false },
         copilot_model = 'gpt-4.1',
         suggestion = {
-          enabled = true,
-          auto_trigger = true,
+          enabled = false,
+          auto_trigger = false,
           hide_during_completion = true,
           keymap = {
-            accept = '<Tab>',
+            accept = false,
             accept_word = false,
-            next = '<A-n>',
-            prev = '<A-p>',
+            next = false,
+            prev = false,
           },
         },
         filetypes = {

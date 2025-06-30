@@ -158,7 +158,16 @@ in
         nvim-autopairs
         iron-nvim
         copilot-lua
-        windsurf-nvim
+        (pkgs.vimUtils.buildVimPlugin {
+          pname = "windsurf-vim";
+          version = "2024-06-30";
+          src = pkgs.fetchFromGitHub {
+            owner = "Exafunction";
+            repo = "windsurf.vim";
+            rev = "main";
+            hash = "sha256-V3ePeEysQFvYO7cVlNsbs5WURo15kJrxWIvx5KkGXTQ=";
+          };
+        })
         neogen
         CopilotChat-nvim
         nvim-dap

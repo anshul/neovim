@@ -3,6 +3,28 @@
 An opinionated AI-first Nix Neovim config designed for use with GitHub Copilot and Claude Code. This should be easy to use, have a vim aesthetic, and be fast.
 It should also be a reasonable replacement for a well-configured VS Code / Cursor setup.
 
+## AI Setup (Required)
+
+After installation, you must authenticate with both AI services:
+
+### 1. Windsurf (Autocomplete)
+
+Run this command in Neovim to set up Windsurf autocomplete:
+
+```vim
+:Codeium Auth
+```
+
+### 2. GitHub Copilot (Chat)
+
+Run this command in Neovim to authenticate with Copilot Chat:
+
+```vim
+:Copilot auth
+```
+
+**Note**: This configuration uses Windsurf for autocomplete suggestions and GitHub Copilot for AI chat assistance. Both authentications are required for full functionality.
+
 ## Quick Try
 
 Run the configuration without adding it to your setup:
