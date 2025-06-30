@@ -116,6 +116,14 @@
             luajit # lua runtime for tests
             luajitPackages.busted # lua testing framework
             luajitPackages.luafilesystem # required by busted
+            # Custom build command
+            (writeShellScriptBin "build" ''
+              nix build .#nvim "$@"
+            '')
+            # Custom run command
+            (writeShellScriptBin "run" ''
+              nix run .#nvim "$@"
+            '')
           ];
           buildInputs = self.checks.${system}.pre-commit-check.enabledPackages;
           shellHook = ''

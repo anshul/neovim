@@ -39,11 +39,11 @@
     },
     "nixCats": {
       "locked": {
-        "lastModified": 1748230488,
-        "narHash": "sha256-CktYY2rcFPJ3Tbz5H/nDnkhaO18nrLGdWa1mH7V9X5Q=",
+        "lastModified": 1750385661,
+        "narHash": "sha256-JpIEf5IrOzMTjowkxB6kgh4AK3Dp9i/T9G4w2ZiKMgQ=",
         "owner": "BirdeeHub",
         "repo": "nixCats-nvim",
-        "rev": "2a2f15a6c085524ac121f5da9a73ee2155c53d70",
+        "rev": "04379fef2fbd4c9d8f4c9a6203cef135ab0b1acd",
         "type": "github"
       },
       "original": {
@@ -54,11 +54,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1748248602,
-        "narHash": "sha256-LanRAm0IRpL36KpCKSknEwkBFvTLc9mDHKeAmfTrHwg=",
+        "lastModified": 1751180975,
+        "narHash": "sha256-BKk4yDiXr4LdF80OTVqYJ53Q74rOcA/82EClXug8xsY=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "ad331efcaf680eb1c838cb339472399ea7b3cdab",
+        "rev": "a48741b083d4f36dd79abd9f760c84da6b4dc0e5",
         "type": "github"
       },
       "original": {
@@ -119,11 +119,11 @@
     "plugins-early-retirement-nvim": {
       "flake": false,
       "locked": {
-        "lastModified": 1747690845,
-        "narHash": "sha256-0qZhfxRhY8kR33X9/a9lNt1Slce8oSHeC8bJ7bSbYpQ=",
+        "lastModified": 1750108178,
+        "narHash": "sha256-3I7Xup+v9Yq9/nJQ1F5CDW99oFQcxbinv7VQcKeA16Y=",
         "owner": "chrisgrieser",
         "repo": "nvim-early-retirement",
-        "rev": "6db15a859cf73d4027e919f5a49cc795ee96831a",
+        "rev": "d9ffd8f70ed6d466cecd3e7e2dd1425b0010932f",
         "type": "github"
       },
       "original": {
@@ -135,11 +135,11 @@
     "plugins-incline-nvim": {
       "flake": false,
       "locked": {
-        "lastModified": 1742809093,
-        "narHash": "sha256-5chrEfjk1Q+lvGqtoUfS/cYbxCUp1gij6SMoB1QRNbs=",
+        "lastModified": 1749113304,
+        "narHash": "sha256-Xz2OLjms3Yt+xv/BfYZoCb8O+zF6/Z5ZHBQOqcUvo6c=",
         "owner": "b0o",
         "repo": "incline.nvim",
-        "rev": "27040695b3bbfcd3257669037bd008d1a892831d",
+        "rev": "0fd2d5a27504dba7fdc507a53275f22c081fe640",
         "type": "github"
       },
       "original": {
@@ -151,11 +151,11 @@
     "plugins-lze": {
       "flake": false,
       "locked": {
-        "lastModified": 1748205840,
-        "narHash": "sha256-wpA6CFPTdpPJVie2JfB3giIIsdJxvUrxd26vHOGjCN0=",
+        "lastModified": 1750693429,
+        "narHash": "sha256-weysXFDBF0cVuTOwdPCPn8D7c98LBP1mUy3qfIjpMIA=",
         "owner": "BirdeeHub",
         "repo": "lze",
-        "rev": "3a05305a638e7e451bfafe955102b8d5536c11cb",
+        "rev": "5ebeff3b95923187ce2eed29b2a652a3eda1b5c8",
         "type": "github"
       },
       "original": {
@@ -167,11 +167,11 @@
     "plugins-lzextras": {
       "flake": false,
       "locked": {
-        "lastModified": 1748140705,
-        "narHash": "sha256-a7CvliZk3bYO8Af2s+OTplyBazLBNsJGoTBfk3L3SLo=",
+        "lastModified": 1750569364,
+        "narHash": "sha256-LLCxiUiV1g2MIfYrWYioC2Dnt8ASKK8CPw8Nds7pS6s=",
         "owner": "BirdeeHub",
         "repo": "lzextras",
-        "rev": "64aeb9a457aaebdbf7504fc56ed8ceb52ad2cf2c",
+        "rev": "cb5f4aeccea87c4c4f503e82967c5d0ef945aa3b",
         "type": "github"
       },
       "original": {
@@ -231,11 +231,11 @@
     "plugins-slimline-nvim": {
       "flake": false,
       "locked": {
-        "lastModified": 1747645985,
-        "narHash": "sha256-dJ6OPG5obOsyG0jkyVcRxQRoVk6narsG13qLy74ZhU4=",
+        "lastModified": 1751223964,
+        "narHash": "sha256-OweaIG/fePoI5GG65OaCNc4CEg4ExZA2iIgmJLmaNHk=",
         "owner": "sschleemilch",
         "repo": "slimline.nvim",
-        "rev": "10dd807685997d1b72b950dfb4ec1a01cb259101",
+        "rev": "92c5623e05f36821b23184abf3bfc040f3b55fcd",
         "type": "github"
       },
       "original": {
@@ -299,11 +299,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1747372754,
-        "narHash": "sha256-2Y53NGIX2vxfie1rOW0Qb86vjRZ7ngizoo+bnXU9D9k=",
+        "lastModified": 1750779888,
+        "narHash": "sha256-wibppH3g/E2lxU43ZQHC5yA/7kIKLGxVEnsnVK1BtRg=",
         "owner": "cachix",
         "repo": "git-hooks.nix",
-        "rev": "80479b6ec16fefd9c1db3ea13aeb038c60530f46",
+        "rev": "16ec914f6fb6f599ce988427d9d94efddf25fe6d",
         "type": "github"
       },
       "original": {

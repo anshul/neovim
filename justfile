@@ -4,6 +4,10 @@ default:
     @just --list
 
 alias r := run
+alias b := build
+
+build:
+    nix build .#nvim
 
 run:
     nix run .#

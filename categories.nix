@@ -158,6 +158,7 @@ in
         nvim-autopairs
         iron-nvim
         copilot-lua
+        windsurf-nvim
         neogen
         CopilotChat-nvim
         nvim-dap

@@ -191,16 +191,16 @@ neovim/
 ### `./lua/nvim/completions`
 
 - `blink-cmp.lua` – primary completion engine (keymaps, sources, signature pop‑ups).
-- `copilot.lua` – Copilot inline suggestions (model `gpt‑4o‑copilot`).
+- `copilot.lua` – Copilot inline suggestions (model `gpt‑4.1`).
 - `neogen.lua` – docstring generator (NumpyDoc / TSDoc).
 - `init.lua` – simply requires the above three.
 
 ### `./lua/nvim/ai`
 
 - `init.lua` – loads AI helpers.
-- `avante.lua` – **avante.nvim** with Copilot backend (`o4-mini`), planning & hints on, autosuggest off.
+- `avante.lua` – **avante.nvim** with Copilot backend (`gpt-4.1`), planning & hints on, autosuggest off.
 - `wtf.lua` – **wtf.nvim** diagnostic explain / fix (`<Leader>cd/‌cs`).
-- `chatgpt.lua` – **ChatGPT.nvim** wrapper (model `gpt‑4.1‑mini`).
+- `chatgpt.lua` – **ChatGPT.nvim** wrapper (model `gpt‑4.1`).
 
 ### `./lua/nvim/bars`
 
