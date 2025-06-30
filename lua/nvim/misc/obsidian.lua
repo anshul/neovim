@@ -32,14 +32,13 @@ require('lze').load {
             path = '~/Documents/Obsidian',
           },
         },
-        new_notes_location = 'notes_subdir',
-        notes_subdir = '+',
+        new_notes_location = 'root',
         preferred_link_style = 'wiki',
         note_id_func = function(title)
           if title and title ~= '' then
             return title
           else
-            return 'Notes-' .. os.date '%Y%m%d'
+            return os.date '%Y-%m-%d'
           end
         end,
         daily_notes = {
