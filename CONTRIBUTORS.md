@@ -292,7 +292,7 @@ neovim/
 - `./lua/nvim/misc/obsidian.lua` – Obsidian note‑taking shortcuts (`<leader>n…`).
 - `./lua/nvim/misc/mini-files.lua` – mini.files explorer (`g.`, `⌃x/⌃v/⌃t`, sync).
 - `./lua/nvim/misc/search-replace.lua` – search & replace commands (`<leader>sr`, `<leader>sR`).
-- `./lua/nvim/ui/folding.lua` – fold control keys (`zR`, `zM`, `zK`).
+- `./lua/nvim/ui/folding.lua` – fold control keys (`zR`, `zM`, `zK`, `z1`-`z5`, `zz`).
 - `./lua/nvim/ui/grapple.lua` – bookmark tag & jump keys (`<leader>m…`, `[g`, `]g`).
 - `./lua/nvim/ui/indent.lua` – toggle indent guides (`<leader>ii`).
 - `./lua/nvim/ui/zen.lua` – zen & twilight toggles (`<leader>zz`, `<leader>zt`).

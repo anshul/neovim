@@ -169,13 +169,13 @@ The Obsidian vault will be automatically created at `~/Documents/Obsidian` when 
 - `[t` `]t` — previous/next tab
 - `<C-Up>` `<C-Down>` `<C-Left>` `<C-Right>` — resize windows
 - `<Leader>w=` — equalize window sizes
-- `[b` `]b` or `<A-Left>` `<A-Right>` — previous/next buffer
+- `[b` `]b` or `<A-Left>` `<A-Right>` or `<Cmd-Left>` `<Cmd-Right>` — previous/next buffer
 - `<C-t>` — new tab
 - `<C-n>` — open notes
 - `<C-o>` — file finder
 - `<C-p>` — git finder
 - `<C-b>` — buffer finder
-- `<C-d>` — close buffer
+- `<C-d>` or `<Cmd-d>` — close buffer
 - `<C-x>` — diagnostics list
 - `<C-g>` — toggle Copilot Chat
 - `<C-s>` — save file
@@ -261,6 +261,8 @@ The Obsidian vault will be automatically created at `~/Documents/Obsidian` when 
 
 - `<leader>ii` — toggle indent guides
 - `zR` `zM` `zK` — open/close folds via ufo.nvim
+- `z1` `z2` `z3` `z4` `z5` — close folds at specific levels (1-5)
+- `zz` — toggle fold under cursor
 
 ### Writing & Notes
 

@@ -60,6 +60,46 @@ require('lze').load {
           end
         end,
       },
+      {
+        'z1',
+        function()
+          require('ufo').closeFoldsWith(1)
+        end,
+        desc = 'Close folds with level 1',
+      },
+      {
+        'z2',
+        function()
+          require('ufo').closeFoldsWith(2)
+        end,
+        desc = 'Close folds with level 2',
+      },
+      {
+        'z3',
+        function()
+          require('ufo').closeFoldsWith(3)
+        end,
+        desc = 'Close folds with level 3',
+      },
+      {
+        'z4',
+        function()
+          require('ufo').closeFoldsWith(4)
+        end,
+        desc = 'Close folds with level 4',
+      },
+      {
+        'z5',
+        function()
+          require('ufo').closeFoldsWith(5)
+        end,
+        desc = 'Close folds with level 5',
+      },
+      {
+        'zz',
+        'za',
+        desc = 'Toggle fold',
+      },
     },
     event = { 'DeferredUIEnter' },
     after = function(_)

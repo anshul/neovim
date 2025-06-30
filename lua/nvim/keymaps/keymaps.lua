@@ -44,6 +44,8 @@ map('n', '[b', '<cmd>bprevious<CR>', { desc = 'Previous buffer' })
 map('n', ']b', '<cmd>bnext<CR>', { desc = 'Next buffer' })
 map('n', '<M-Left>', '<cmd>bprevious<CR>', { desc = 'Previous buffer' })
 map('n', '<M-Right>', '<cmd>bnext<CR>', { desc = 'Next buffer' })
+map('n', '<D-Left>', '<cmd>bprevious<CR>', { desc = 'Previous buffer' })
+map('n', '<D-Right>', '<cmd>bnext<CR>', { desc = 'Next buffer' })
 
 -- Tab management
 map('n', '<C-t>', '<cmd>tabnew<CR>', { desc = 'New tab' })
@@ -56,6 +58,7 @@ map('n', '<C-p>', '<cmd>lua Snacks.picker.git_files({untracked=true})<cr>', { de
 map('n', '<C-f>', '<cmd>lua Snacks.picker.grep()<cr>', { desc = 'Grep search' })
 map('n', '<C-b>', '<cmd>lua Snacks.picker.buffers()<cr>', { desc = 'Buffer finder' })
 map('n', '<C-d>', "<cmd>lua require('snacks').bufdelete()<CR>", { desc = 'Close buffer' })
+map('n', '<D-d>', "<cmd>lua require('snacks').bufdelete()<CR>", { desc = 'Close buffer' })
 map('n', '<C-x>', '<cmd>Trouble diagnostics toggle focus=true<cr>', { desc = 'Diagnostics list' })
 map('n', '<C-g>', '<cmd>CopilotChatToggle<cr>', { desc = 'Copilot Chat' })
 
