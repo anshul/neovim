@@ -61,6 +61,14 @@ map('n', '<C-d>', "<cmd>lua require('snacks').bufdelete()<CR>", { desc = 'Close 
 map('n', '<D-d>', "<cmd>lua require('snacks').bufdelete()<CR>", { desc = 'Close buffer' })
 map('n', '<C-x>', '<cmd>Trouble diagnostics toggle focus=true<cr>', { desc = 'Diagnostics list' })
 map('n', '<C-g>', '<cmd>CopilotChatToggle<cr>', { desc = 'Copilot Chat' })
+map('i', '<D-r>', function()
+  local copilot = require 'copilot.suggestion'
+  if copilot.is_visible() then
+    copilot.next()
+  else
+    copilot.trigger()
+  end
+end, { desc = 'Trigger/cycle Copilot suggestion' })
 
 -- Save files
 map('n', '<C-s>', '<cmd>w<CR>', { desc = 'Save file' })
