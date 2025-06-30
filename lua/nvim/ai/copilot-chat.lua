@@ -15,7 +15,7 @@ require('lze').load {
     dep = { 'copilot.lua', 'plenary.nvim' },
     after = function(_)
       require('CopilotChat').setup {
-        model = 'gpt-4o',
+        model = 'gpt-4.1',
         auto_follow_cursor = false,
         show_help = true,
         question_header = '## User ',
