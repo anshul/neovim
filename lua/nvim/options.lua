@@ -25,8 +25,9 @@ vim.opt.undofile = true
 vim.opt.updatetime = 300
 vim.opt.writebackup = false
 vim.opt.expandtab = true
-vim.opt.shiftwidth = 4
-vim.opt.tabstop = 4
+vim.opt.shiftwidth = 2
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
 vim.opt.cursorline = true
 vim.opt.laststatus = 3
 vim.opt.number = true
@@ -35,7 +36,7 @@ vim.opt.signcolumn = 'yes'
 vim.opt.wrap = false
 vim.opt.scrolloff = 8
 vim.opt.guifont = 'Maple Mono NF:h13'
-vim.opt.listchars = { tab = '󰌒 ', trail = '•', nbsp = '␣' }
+vim.opt.listchars:append { tab = '󰌒 ', trail = '•', nbsp = '␣' }
 vim.opt.list = true
 vim.opt.showbreak = '↪ '
 vim.opt.foldnestmax = 20

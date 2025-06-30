@@ -1,7 +1,3 @@
--- Set global leaders
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
-
 -- Helper function for key mappings
 local function map(mode, key, action, opts)
   local options = { noremap = true, silent = true }

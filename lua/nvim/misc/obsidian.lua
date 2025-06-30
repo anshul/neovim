@@ -7,6 +7,17 @@ require('lze').load {
     'obsidian.nvim',
     dep = { 'plenary.nvim' },
     event = { 'DeferredUIEnter' },
+    cmd = {
+      'ObsidianNew',
+      'ObsidianQuickSwitch',
+      'ObsidianToday',
+      'ObsidianTemplate',
+      'ObsidianLink',
+      'ObsidianBacklinks',
+      'ObsidianLinks',
+      'ObsidianRename',
+      'ObsidianTOC',
+    },
     after = function(_)
       local obsidian_path = vim.fn.expand '~/Documents/Obsidian'
       if vim.fn.isdirectory(obsidian_path) == 0 then
@@ -25,7 +36,11 @@ require('lze').load {
         notes_subdir = '+',
         preferred_link_style = 'wiki',
         note_id_func = function(title)
-          return title
+          if title and title ~= '' then
+            return title
+          else
+            return 'Notes-' .. os.date '%Y%m%d'
+          end
         end,
         daily_notes = {
           folder = 'Calendar/Notes/Daily',

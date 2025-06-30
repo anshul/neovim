@@ -84,11 +84,30 @@ servers.marksman = {}
 -- julia --project=~/.julia/environments/nvim-lspconfig -e 'using Pkg; Pkg.update()'
 servers.julials = {}
 
-servers.ts_ls = {}
+servers.ts_ls = {
+  filetypes = { 'typescript', 'typescriptreact', 'javascript', 'javascriptreact' },
+}
 
-servers.ts_ls = {}
-
-servers.rust_analyzer = {}
+servers.rust_analyzer = {
+  settings = {
+    ['rust-analyzer'] = {
+      cargo = { features = 'all' },
+      check = { command = 'clippy', features = 'all' },
+      inlayHints = {
+        bindingModeHints = { enable = false },
+        chainingHints = { enable = true },
+        closingBraceHints = { enable = true, minLines = 25 },
+        closureReturnTypeHints = { enable = 'never' },
+        lifetimeElisionHints = { enable = 'never', useParameterNames = false },
+        maxLength = 25,
+        parameterHints = { enable = true },
+        reborrowHints = { enable = 'never' },
+        renderColons = true,
+        typeHints = { enable = true, hideClosureInitialization = false, hideNamedConstructor = false },
+      },
+    },
+  },
+}
 
 servers.svelte = {}
 

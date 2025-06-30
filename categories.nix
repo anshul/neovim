@@ -76,6 +76,11 @@ in
 
         # dap
         python3Packages.debugpy
+
+        # Rust development
+        cargo-watch
+        cargo-nextest
+        lldb
       ];
 
       elixir = [
@@ -155,7 +160,6 @@ in
         copilot-lua
         neogen
         CopilotChat-nvim
-        wtf-nvim
         nvim-dap
         nvim-dap-ui
         nvim-dap-python
@@ -192,8 +196,14 @@ in
         pkgs.neovimPlugins.early-retirement-nvim
         pkgs.neovimPlugins.timber-nvim
         pkgs.neovimPlugins.maximize-nvim
-        pkgs.neovimPlugins.claude-vim
-        # pkgs.neovimPlugins.deepwiki-nvim # Community plugin - may need manual installation
+        # Rust toolchain
+        crates-nvim
+        rustaceanvim
+        neotest-rust
+        # React/TypeScript toolchain
+        # (typescript-language-server already in lspsAndRuntimeDeps)
+        # Elixir enhanced support
+        # (already configured in elixir section)
       ];
 
       elixir = with pkgs.vimPlugins; [

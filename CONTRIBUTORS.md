@@ -161,8 +161,8 @@ neovim/
 
 ### `./lua/nvim`
 
-- `init.lua` – root loader: pulls in options, themes, LSP, completions, treesitter, plugins, UI, bars, git, AI, literate, misc, debug, lang modules;
-  registers `lze` LSP handlers.
+- `init.lua` – root loader: pulls in options, themes, LSP, completions, treesitter, plugins, UI, bars, git, AI, literate, misc, debug, lang modules; registers
+  `lze` LSP handlers.
 - `options.lua` – baseline UX settings (clipboard, termguicolors, search behaviour, splits, soft‑tabs, folds, listchars, font, terminal integration…).
 - `autocmds.lua` – quality‑of‑life autocommands (trim `cro`; quick‑close transient buffers; auto‑size splits; disable _mini‑indentscope_ in helper buffers;
   force opaque floating windows).
@@ -531,8 +531,7 @@ nix flake show
 
 ### Essential Documentation
 
-- [nixCats Documentation](https://github.com/BirdeeHub/nixCats-nvim) - Nix-based Neovim
-  configuration framework
+- [nixCats Documentation](https://github.com/BirdeeHub/nixCats-nvim) - Nix-based Neovim configuration framework
 - [Neovim Documentation](https://neovim.io/doc/) - Official Neovim user manual and API reference
 - [Nix Manual](https://nixos.org/manual/nix/stable/) - Nix package manager documentation
 - [Home Manager](https://nix-community.github.io/home-manager/) - Declarative dotfile management
@@ -564,5 +563,5 @@ nix flake show
 
 ---
 
-> **Note for AI Agents**: This file is also available as `AGENTS.md` and `CLAUDE.md` (symlinks). All three files reference the same content.
-> Please refer to this comprehensive development guide for project structure, architecture, and contribution guidelines.
+> **Note for AI Agents**: This file is also available as `AGENTS.md` and `CLAUDE.md` (symlinks). All three files reference the same content. Please refer to
+> this comprehensive development guide for project structure, architecture, and contribution guidelines.

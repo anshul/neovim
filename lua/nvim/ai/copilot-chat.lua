@@ -1,24 +1,7 @@
 require('lze').load {
   {
-    'copilot-chat.nvim',
-    cmd = {
-      'CopilotChat',
-      'CopilotChatOpen',
-      'CopilotChatClose',
-      'CopilotChatToggle',
-      'CopilotChatStop',
-      'CopilotChatReset',
-      'CopilotChatSave',
-      'CopilotChatLoad',
-      'CopilotChatDebugInfo',
-      'CopilotChatExplain',
-      'CopilotChatReview',
-      'CopilotChatFix',
-      'CopilotChatOptimize',
-      'CopilotChatDocs',
-      'CopilotChatTests',
-      'CopilotChatCommit',
-    },
+    'CopilotChat.nvim',
+    event = 'DeferredUIEnter',
     keys = {
       { '<leader>cc', '<cmd>CopilotChatToggle<cr>', desc = 'Copilot Chat Toggle' },
       { '<leader>ce', '<cmd>CopilotChatExplain<cr>', desc = 'Copilot Explain', mode = { 'n', 'v' } },
@@ -29,13 +12,7 @@ require('lze').load {
       { '<leader>ct', '<cmd>CopilotChatTests<cr>', desc = 'Copilot Tests', mode = { 'n', 'v' } },
       { '<leader>cm', '<cmd>CopilotChatCommit<cr>', desc = 'Copilot Commit', mode = { 'n', 'v' } },
     },
-    load = function(name)
-      require('lzextras').loaders.multi {
-        name,
-        'copilot.lua',
-        'plenary.nvim',
-      }
-    end,
+    dep = { 'copilot.lua', 'plenary.nvim' },
     after = function(_)
       require('CopilotChat').setup {
         model = 'gpt-4o',

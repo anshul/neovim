@@ -1,5 +1,8 @@
--- Simplified configuration validation tests
--- These tests validate the config structure without requiring full plugin loading
+-- Configuration validation tests with nixCats mocking
+-- These tests validate the config structure with proper mocking
+
+-- Load nixCats mocks before any config modules
+require('tests.mock_nixcats').setup()
 
 describe('Configuration Validation', function()
   describe('Config Files Exist and Load', function()
@@ -57,14 +60,19 @@ describe('Configuration Validation', function()
 
     it('should have all expected AI modules', function()
       assert.is_true(pcall(require, 'nvim.ai'))
-      assert.is_true(pcall(require, 'nvim.ai.avante'))
-      assert.is_true(pcall(require, 'nvim.ai.chatgpt'))
+      assert.is_true(pcall(require, 'nvim.ai.copilot-chat'))
+    end)
+
+    it('should have all expected language modules', function()
+      assert.is_true(pcall(require, 'nvim.lang'))
+      assert.is_true(pcall(require, 'nvim.lang.elixir'))
+      assert.is_true(pcall(require, 'nvim.lang.rust'))
     end)
   end)
 
   describe('Configuration Values', function()
     it('should set leader key', function()
-      require 'nvim.keymaps'
+      require 'nvim.init'
       assert.is_not_nil(vim.g.mapleader, 'Leader key should be set')
     end)
 
@@ -89,12 +97,22 @@ describe('Configuration Validation', function()
         'nvim.git.gitsigns',
         'nvim.ui.snacks',
         'nvim.themes.catppuccin',
+        'nvim.ai.copilot-chat',
+        'nvim.lang.rust',
+        'nvim.lang.elixir',
       }
 
       for _, config in ipairs(plugin_configs) do
         local success = pcall(require, config)
         assert.is_true(success, config .. ' should load without errors')
       end
+    end)
+
+    it('should have valid dashboard configuration', function()
+      local success, dashboard_config = pcall(require, 'nvim.ui.snacks-dashboard')
+      assert.is_true(success, 'Dashboard config should load without errors')
+      assert.is_table(dashboard_config, 'Dashboard should return a table')
+      assert.is_table(dashboard_config.dashboard, 'Dashboard should have dashboard config')
     end)
   end)
 end)

@@ -15,7 +15,7 @@ require('lze').load {
       local wk = require 'which-key'
       wk.setup { preset = 'helix' }
       wk.add {
-        { '<leader>c', group = '+Claude/Copilot' },
+        { '<leader>c', group = '+Copilot' },
         { '<leader>d', group = '+DAP' },
         { '<leader>f', group = '+File search' },
         { '<leader>g', group = '+Git' },
@@ -26,15 +26,13 @@ require('lze').load {
         { '<leader>n', group = '+Notes' },
         { '<leader>p', group = '+Pos[session]' },
         { '<Leader>q', group = '+Close' },
-        { '<leader>r', group = '+Refactor' },
+        { '<leader>r', group = '+Refactor/Rust' },
         { '<leader>s', group = '+Text search' },
         { '<leader>t', group = '+Snacks pickers' },
         { '<leader>T', group = '+Terminal' },
         { '<leader>u', group = '+Misc.' },
         { '<leader>x', group = '+Trouble' },
         { '<leader>z', group = '+Zen' },
-        { '<leader>cd', desc = 'Diagnostics gpt' },
-        { '<leader>cs', desc = 'Diagnostics search' },
         { '<leader>[', group = '+prev' },
         { '<leader>]', group = '+next' },
       }

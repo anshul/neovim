@@ -42,12 +42,6 @@ M.dashboard = {
         action = ':CopilotChatToggle',
       },
       {
-        icon = ' ',
-        key = '<leader>cc',
-        desc = 'Claude Chat',
-        action = ':ClaudeChat',
-      },
-      {
         icon = ' ',
         key = 'r',
         desc = 'Restore Session',
