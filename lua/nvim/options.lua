@@ -1,5 +1,5 @@
--- Clipboard settings
-vim.opt.clipboard = { 'unnamedplus' }
+-- Clipboard settings - only yank operations use system clipboard
+-- Delete operations will use black hole register to avoid clipboard pollution
 
 -- General Neovim options
 vim.opt.termguicolors = true

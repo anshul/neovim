@@ -87,3 +87,23 @@ map('v', '>', '>gv', { desc = 'Indent right' })
 -- Macros
 map('n', 'Q', '@qj', { desc = 'Run q macro' })
 map('x', 'Q', ':norm @q<CR>', { desc = 'Run q macro' })
+
+-- Clipboard behavior - yank to system clipboard, delete to black hole
+map('n', 'y', '"+y', { desc = 'Yank to system clipboard' })
+map('v', 'y', '"+y', { desc = 'Yank to system clipboard' })
+map('n', 'Y', '"+Y', { desc = 'Yank line to system clipboard' })
+map('n', 'p', '"+p', { desc = 'Paste from system clipboard' })
+map('n', 'P', '"+P', { desc = 'Paste before from system clipboard' })
+map('v', 'p', '"+p', { desc = 'Paste from system clipboard' })
+
+-- Delete operations use black hole register (don't affect clipboard)
+map('n', 'd', '"_d', { desc = 'Delete to black hole register' })
+map('v', 'd', '"_d', { desc = 'Delete to black hole register' })
+map('n', 'D', '"_D', { desc = 'Delete to end of line (black hole)' })
+map('n', 'x', '"_x', { desc = 'Delete character (black hole)' })
+map('n', 'X', '"_X', { desc = 'Delete character before (black hole)' })
+map('n', 'c', '"_c', { desc = 'Change (black hole)' })
+map('v', 'c', '"_c', { desc = 'Change (black hole)' })
+map('n', 'C', '"_C', { desc = 'Change to end of line (black hole)' })
+map('n', 's', '"_s', { desc = 'Substitute character (black hole)' })
+map('n', 'S', '"_S', { desc = 'Substitute line (black hole)' })
