@@ -25,6 +25,23 @@ Run this command in Neovim to authenticate with Copilot Chat:
 
 **Note**: This configuration uses Windsurf for autocomplete suggestions and GitHub Copilot for AI chat assistance. Both authentications are required for full functionality.
 
+## Clipboard Behavior
+
+⚠️ **Important**: This configuration uses vim's local registers by default instead of the system clipboard. This may differ from other Neovim setups:
+
+### Default Operations (Local Vim Clipboard)
+
+- `y`, `Y` — Yank to vim register (not system clipboard)
+- `p`, `P` — Paste from vim register
+- `d`, `x`, `c`, `s` — Delete/change operations store content in vim register
+
+### Global System Clipboard
+
+- `Shift+Cmd+V` / `Shift+Ctrl+V` — Paste from global system clipboard
+- `Ctrl+Shift+C` / `Cmd+Shift+C` — Copy to global system clipboard
+
+This design keeps your vim operations local while providing explicit shortcuts for system clipboard integration when needed.
+
 ## Quick Try
 
 Run the configuration without adding it to your setup:
