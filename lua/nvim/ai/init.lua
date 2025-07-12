@@ -1,1 +1,1 @@
-require 'nvim.ai.copilot-chat'
+-- AI integrations will be loaded here when needed

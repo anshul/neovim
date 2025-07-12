@@ -38,8 +38,8 @@ M.dashboard = {
       {
         icon = '󰚩 ',
         key = '<C-g>',
-        desc = 'Copilot Chat',
-        action = ':CopilotChatToggle',
+        desc = 'Supermaven Status',
+        action = ':SupermavenStatus',
       },
       {
         icon = ' ',

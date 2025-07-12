@@ -32,8 +32,6 @@ map('n', '<Leader>lg', "<cmd>lua require('neogen').generate()<CR>", {
 -- Getting highlights at cursor
 map('n', '<leader>lh', '<cmd>lua vim.notify(vim.inspect(vim.treesitter.get_captures_at_cursor(0)))<CR>', { desc = 'Get highlight at cursor' })
 
--- CopilotChat keymaps are defined in ai/copilot-chat.lua
-
 -- DAP
 map('n', '<leader>db', "<cmd>lua require'dap'.toggle_breakpoint()<cr>", { desc = 'DAP toggle breakpoint' })
 map('n', '<leader>dc', "<cmd>lua require'dap'.continue()<cr>", { desc = 'DAP continue' })

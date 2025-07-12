@@ -1,29 +1,33 @@
 # neovim
 
-An opinionated AI-first Nix Neovim config designed for use with GitHub Copilot and Claude Code. This should be easy to use, have a vim aesthetic, and be fast.
+An opinionated AI-first Nix Neovim config designed for use with Supermaven Pro and Claude Code. This should be easy to use, have a vim aesthetic, and be fast.
 It should also be a reasonable replacement for a well-configured VS Code / Cursor setup.
 
 ## AI Setup (Required)
 
-After installation, you must authenticate with both AI services:
+After installation, you must activate Supermaven Pro:
 
-### 1. Windsurf (Autocomplete)
+1. **Activate Pro tier**: Open Neovim and run:
 
-Run this command in Neovim to set up Windsurf autocomplete:
+   ```vim
+   :SupermavenUsePro
+   ```
 
-```vim
-:Codeium Auth
-```
+   This will open a browser window for authentication with your Supermaven account.
 
-### 2. GitHub Copilot (Chat)
+2. **Verify activation**: Check your status with:
 
-Run this command in Neovim to authenticate with Copilot Chat:
+   ```vim
+   :SupermavenStatus
+   ```
 
-```vim
-:Copilot auth
-```
+   Should show "Pro" tier and "Running" status.
 
-**Note**: This configuration uses Windsurf for autocomplete suggestions and GitHub Copilot for AI chat assistance. Both authentications are required for full functionality.
+**Note**: This configuration uses Supermaven Pro for ultra-fast AI autocomplete with 1M token context window and unlimited usage. Key bindings:
+
+- `<Tab>` - Accept full suggestion
+- `<C-k>` - Accept next word only
+- `<C-]>` - Dismiss suggestion
 
 ## Clipboard Behavior
 

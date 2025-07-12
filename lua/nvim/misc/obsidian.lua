@@ -44,10 +44,10 @@ require('lze').load {
         daily_notes = {
           folder = 'Calendar/Notes/Daily',
           date_format = '%Y-%m-%d',
-          template = 'Atlas/Utilities/Templates/Daily template.md',
+          template = 'Templates/Daily template.md',
         },
         templates = {
-          folder = 'Atlas/Utilities/Templates',
+          folder = 'Templates',
           date_format = '%Y-%m-%d',
           time_format = '%H:%M',
           substitutions = {},
