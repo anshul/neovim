@@ -58,13 +58,14 @@ lua/nvim/              # Core Neovim configuration
 ├── themes/           # Catppuccin and Rose Pine
 ├── plugins/          # General utilities
 ├── git/              # Git integrations (gitsigns, neogit, diffview, octo)
+├── ai/               # AI integrations (claude-code.nvim)
 ├── ui/               # Visual enhancements (14 components)
 ├── misc/             # Additional utilities (10 tools)
 ├── literate/         # REPL integrations
 ├── debug/            # DAP configurations
 └── lang/             # Language-specific (Elixir, Rust)
 
-flake.nix             # Nix flake with 15 plugin inputs
+flake.nix             # Nix flake with 14 plugin inputs
 packages.nix          # 84 LSPs/tools, 116 startup, 206+ optional plugins
 categories.nix        # nixCats plugin categorization
 ```
@@ -73,7 +74,7 @@ categories.nix        # nixCats plugin categorization
 
 - **Framework**: nixCats (Nix-based) with lze (lazy loading)
 - **Completion**: blink.cmp (faster than nvim-cmp)
-- **AI**: Supermaven Pro as primary, Claude.vim for chat
+- **AI**: Supermaven Pro as primary, claude-code.nvim for chat
 - **Multi-tool suite**: Snacks.nvim for unified UX
 - **Theme**: Catppuccin with Rose Pine alternative
 - **Plugin count**: 16 startup, 200+ lazy-loaded

@@ -161,11 +161,8 @@ The Obsidian vault will be automatically created at `~/Documents/Obsidian` when 
 - `treesj`
 - `nvim-autopairs`
 - `iron-nvim`
-- `copilot-lua`
 - `neogen`
-- `claude.vim`
-- `copilot-chat-nvim`
-- `wtf-nvim`
+- `claude-code.nvim`
 - `nvim-dap`
 - `nvim-dap-ui`
 - `nvim-dap-python`
@@ -220,9 +217,8 @@ The Obsidian vault will be automatically created at `~/Documents/Obsidian` when 
 - `<C-b>` — buffer finder
 - `<C-d>` or `<Cmd-d>` — close buffer
 - `<C-x>` — diagnostics list
-- `<C-g>` — toggle Copilot Chat
 - `<C-s>` — save file
-- `<Tab>` — accept AI suggestion (Copilot)
+- `<Tab>` — accept AI suggestion (Supermaven)
 - `<Leader>qb` `<Leader>qB` `<Leader>qw` `<Leader>qt` `<Leader>qa` — close buffers/windows/tabs
 - `<` / `>` in visual mode — keep selection while indenting
 - `Q` — run macro in register `q`
@@ -246,29 +242,14 @@ The Obsidian vault will be automatically created at `~/Documents/Obsidian` when 
 - `<Leader>lg` — generate docs
 - `<Leader>lh` — show highlight group
 
-### AI/Claude/Copilot
+### AI/Claude
 
-**Claude.vim**:
+**Claude Code (claude-code.nvim)**:
 
-- `<leader>cc` — Claude chat interface
-- `<leader>ca` — Claude ask (selection/prompt)
-- `<leader>ci` — Claude implement (selection/prompt)
-- `<leader>cr` — Claude review (selection/prompt)
-- `<leader>cg` — Claude generate (selection/prompt)
-
-**Copilot Chat**:
-
-- `<leader>ce` — Copilot explain (selection/prompt)
-- `<leader>cr` — Copilot review (selection/prompt)
-- `<leader>cf` — Copilot fix (selection/prompt)
-- `<leader>co` — Copilot optimize (selection/prompt)
-- `<leader>cd` — Copilot docs (selection/prompt)
-- `<leader>ct` — Copilot tests (selection/prompt)
-- `<leader>cm` — Copilot commit message
-
-**Other AI Tools**:
-
-- `<leader>cd` `<leader>cs` — debug/search diagnostics with AI (wtf.nvim)
+- `<leader>cc` — Open Claude chat interface
+- `<leader>ci` — Claude implement
+- `<leader>cx` — Cancel Claude request
+- `<leader>cc` (visual mode) — Claude code with selection
 
 ### Debugging (DAP)
 

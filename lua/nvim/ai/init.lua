@@ -1,1 +1,1 @@
--- AI integrations will be loaded here when needed
+require 'nvim.ai.claude-code'

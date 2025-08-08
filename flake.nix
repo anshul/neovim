@@ -52,8 +52,8 @@
       url = "github:declancm/maximize.nvim";
       flake = false;
     };
-    plugins-claude-vim = {
-      url = "github:pasky/claude.vim";
+    plugins-claude-code-nvim = {
+      url = "github:greggh/claude-code.nvim";
       flake = false;
     };
   };

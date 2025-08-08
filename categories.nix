@@ -195,6 +195,7 @@ in
         pkgs.neovimPlugins.early-retirement-nvim
         pkgs.neovimPlugins.timber-nvim
         pkgs.neovimPlugins.maximize-nvim
+        pkgs.neovimPlugins.claude-code-nvim
         # Rust toolchain
         crates-nvim
         rustaceanvim
