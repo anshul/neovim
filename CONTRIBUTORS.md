@@ -1,230 +1,164 @@
 # Contributors Guide
 
-## Instructions
+This file provides guidance to all human and AI agents when working with code in this repository.
 
-- This repository is a Neovim configuration built with **Nix** and **Lua**.
-- Always update `CONTIBUTORS.md` after major structural changes (creating / deleting files, repurposing directories, files).
-- Always update `README.md` when keyboard shortcuts change, and verify all information is accurate.
-- Always run `just fix` after making changes to ensure code formatting and linting standards are met.
-- The `nix develop` shell provides `just`, `alejandra`, `markdownlint`, `prettier`, `ruff`, `stylua`, `shellcheck` for linting / formatting, and `busted` with
-  `luajit` for testing.
+## Repository Overview
 
-## Coding Conventions
+This is an AI-first Neovim configuration built with Nix and Lua using the nixCats framework. It's designed for use with Supermaven Pro (1M token context)
+and focuses on performance, modern development workflows, and vim aesthetics.
 
-- Use **2‑space indentation** for every language.
-- Keep code comments concise and relevant.
-- Enter the dev environment with `nix develop` before running any tooling.
-- Don't say co-authored by claude in commit messages
+## Essential Commands
 
-## Commit Standards
+### Development & Testing
 
-Use [Conventional Commits](https://www.conventionalcommits.org/) format:
+```bash
+# Enter development environment (required before running tools)
+nix develop
+
+# Build and run Neovim
+just run           # or: nix run .#nvim
+just build         # Build binary only
+
+# Run tests
+just test          # Run all tests with busted
+just test_unit     # Unit tests only
+just test_integration  # Integration tests
+just test_ci       # CI-safe test suite
+just test_watch    # Watch mode for TDD
+just tdd           # Continuous testing loop
+
+# Code quality (ALWAYS run before committing)
+just fix           # Format and lint all code (alejandra, stylua, prettier, markdownlint, ruff, shellcheck)
+just lint          # Run linters only
+
+# Update dependencies
+just update        # Update flake inputs
+```
+
+### Important Testing Notes
+
+- Test framework: **Busted** with **LuaJIT**
+- Test files located in `tests/` directory
+- Run formatting/linting with `just fix` after any changes
+- Never assume test commands - check `justfile` or ask user
+
+## Architecture Overview
+
+### Directory Structure
 
 ```text
-<type>: <description>
+lua/nvim/              # Core Neovim configuration
+├── init.lua          # Main orchestrator, loads all modules
+├── options.lua       # Core settings (118 lines of tuned options)
+├── autocmds.lua      # Quality-of-life autocommands
+├── keymaps/          # Keyboard mappings (4 modules)
+├── lsps/             # LSP configurations and servers
+├── completions/      # blink.cmp and Supermaven Pro setup
+├── bars/             # Status/tab bars (5 variants)
+├── themes/           # Catppuccin and Rose Pine
+├── plugins/          # General utilities
+├── git/              # Git integrations (gitsigns, neogit, diffview, octo)
+├── ui/               # Visual enhancements (14 components)
+├── misc/             # Additional utilities (10 tools)
+├── literate/         # REPL integrations
+├── debug/            # DAP configurations
+└── lang/             # Language-specific (Elixir, Rust)
 
-[optional body]
-[optional footer]
+flake.nix             # Nix flake with 15 plugin inputs
+packages.nix          # 84 LSPs/tools, 116 startup, 206+ optional plugins
+categories.nix        # nixCats plugin categorization
 ```
 
-### Types
+### Key Technical Decisions
 
-- `feat:` - New feature or enhancement
-- `fix:` - Bug fix
-- `perf:` - Performance improvement
-- `refactor:` - Code restructuring without behavior change
-- `style:` - Code style/formatting changes
-- `docs:` - Documentation updates
-- `test:` - Add or update tests
-- `build:` - Build system or dependency changes
-- `ci:` - CI/CD configuration changes
-- `chore:` - Maintenance tasks
+- **Framework**: nixCats (Nix-based) with lze (lazy loading)
+- **Completion**: blink.cmp (faster than nvim-cmp)
+- **AI**: Supermaven Pro as primary, Claude.vim for chat
+- **Multi-tool suite**: Snacks.nvim for unified UX
+- **Theme**: Catppuccin with Rose Pine alternative
+- **Plugin count**: 16 startup, 200+ lazy-loaded
 
-## Development Workflow
+### Unique Behaviors
 
-### Common Commands
+- **Clipboard**: Uses vim local registers by default, NOT system clipboard
+  - `y`, `d`, `c` operations stay in vim
+  - `Shift+Cmd+V` / `Shift+Ctrl+V` for system paste
+  - `Cmd+Shift+C` / `Ctrl+Shift+C` for system copy
+- **Kitty terminal**: Special scrollback handling
+- **Obsidian**: Auto-creates vault at `~/Documents/Obsidian`
 
-```bash
-# Setup and run
-just run                 # Build and run Neovim
-just update             # Update flake inputs
+## Development Guidelines
 
-# Code quality
-just fix                # Format and lint all code
-just lint               # Run all linters
-just format             # Format all code
+### Code Style
 
-# Testing
-just test               # Run all tests with busted
-just test-watch         # Watch for changes and run tests
+- **Lua**: 2-space indentation, single quotes, no call parentheses (stylua.toml)
+- **Nix**: alejandra formatter
+- **All languages**: 2-space indentation
+- **NO COMMENTS** unless explicitly requested
 
-# Development
-nix develop             # Enter development shell
-just --list             # Show all available commands
-```
+### Commit Standards
 
-### File Watching
+Use Conventional Commits format:
 
-```bash
-# Watch Lua files for changes
-find lua -name "*.lua" | entr -c just test
-```
+- `feat:` New feature/enhancement
+- `fix:` Bug fix
+- `perf:` Performance improvement
+- `refactor:` Code restructuring
+- `docs:` Documentation updates
+- `test:` Test changes
+- `chore:` Maintenance tasks
 
-## Project Overview
+### Before Making Changes
 
-### Project Structure
+1. Always check existing patterns in neighboring files
+2. Use existing libraries/frameworks (check package.json, cargo.toml, etc.)
+3. Follow existing naming conventions and code style
+4. Run `just fix` after changes
+5. Verify with appropriate tests
 
-```text
-neovim/
-├── lua/nvim/           # Core Neovim configuration
-│   ├── init.lua        # Root loader and LSP handlers
-│   ├── options.lua     # Baseline UX settings
-│   ├── autocmds.lua    # Quality-of-life autocommands
-│   ├── treesitter.lua  # Syntax highlighting and motions
-│   ├── keymaps/        # Keyboard mapping modules
-│   │   ├── init.lua
-│   │   ├── keymaps.lua
-│   │   ├── keymaps-plugins.lua
-│   │   ├── keymaps-snacks.lua
-│   │   └── whichkey.lua
-│   ├── lsps/           # Language Server Protocol
-│   │   ├── init.lua
-│   │   ├── lsp.lua
-│   │   ├── servers.lua
-│   │   ├── formatters.lua
-│   │   ├── linters.lua
-│   │   └── ...
-│   ├── completions/    # Code completion
-│   ├── ai/             # AI integrations
-│   ├── bars/           # Status and tab bars
-│   ├── plugins/        # General utilities
-│   ├── git/            # Git integrations
-│   ├── debug/          # Debug Adapter Protocol
-│   ├── literate/       # REPL integrations
-│   ├── ui/             # Visual enhancements
-│   ├── themes/         # Color schemes
-│   ├── misc/           # Everything else
-│   └── lang/           # Language-specific configs
-├── tests/              # Test suite
-├── after/plugin/       # Post-plugin customizations
-├── overlays/           # Nix package overlays
-├── run/                # CI scripts
-├── flake.nix           # Nix flake definition
-├── categories.nix      # nixCats plugin catalog
-├── packages.nix        # Package definitions
-└── justfile            # Command runner tasks
-```
+### Working with Plugins
 
-## Architecture Decisions
+- Startup plugins (16): Essential, loaded immediately
+- Optional plugins (200+): Lazy-loaded on demand
+- Always verify a library exists before using it
+- Check `packages.nix` for available tools/LSPs
 
-### Key Technology Choices
+## Performance Targets
 
-#### **nixCats over other Neovim distributions**
+- Startup time: < 100ms
+- Memory usage: < 50MB basic editing
+- LSP response: < 200ms
+- File opening: < 50ms for files under 1MB
 
-- Reproducible builds across different systems
-- Declarative plugin management with Nix
+## Common Workflows
 
-#### **blink.cmp over nvim-cmp**
+### Adding Language Support
 
-- Faster completion performance
-- Better integration with modern LSP features
-- Less configuration overhead
-- More responsive UI
+1. Check `lua/nvim/lsps/servers.lua` for existing LSP configs
+2. Add LSP to `packages.nix` if needed
+3. Configure in appropriate module under `lua/nvim/lang/`
 
-#### **Snacks.nvim over multiple smaller plugins**
+### Modifying Keymaps
 
-- Unified interface for common functionality
-- Better performance through shared codebase
-- Consistent UX across different features
-- Reduced plugin count and startup overhead
+1. Check `lua/nvim/keymaps/` for the appropriate module
+2. Update keymap definition
+3. Update README.md keyboard shortcuts section
+4. Run `just fix` to format
 
-#### **Catppuccin over other themes**
+### Plugin Management
 
-- Excellent plugin ecosystem support
-- Consistent color palette across tools
-- High contrast and accessibility
-- Active maintenance and updates
+1. Add to `flake.nix` inputs if external
+2. Update `packages.nix` startup/optional lists
+3. Configure in appropriate `lua/nvim/` module
+4. Test with `just test_integration`
 
-### Plugin Selection Criteria
+## Critical Files to Know
 
-1. **Performance Impact**: Must not significantly slow startup
-2. **Maintenance**: Actively maintained with regular updates
-3. **Integration**: Works well with existing plugin ecosystem
-4. **Functionality**: Provides clear value over built-in alternatives
-5. **Configuration**: Reasonable defaults with customization options
+- `lua/nvim/init.lua` - Main entry point and module loader
+- `lua/nvim/options.lua:33-50` - Unique clipboard configuration
+- `lua/nvim/completions/supermaven.lua` - AI completion setup
+- `lua/nvim/keymaps/keymaps.lua` - Core keyboard mappings
+- `justfile` - All available commands
+- `CONTRIBUTORS.md` - Development guidelines (also symlinked as AGENTS.md)
 
-## Performance Guidelines
-
-### Profiling Tools
-
-```bash
-# Custom build command defined in flake.nix
-build
-# Neovim startup profiling
-./nvim --startuptime startup.log
-
-# Lua profiling within Neovim
-:lua require('plenary.profile').start('profile.log', {flame = true})
-# ... perform actions ...
-:lua require('plenary.profile').stop()
-```
-
-### Performance Targets
-
-- Startup time < 100ms on modern hardware
-- Memory usage < 50MB for basic editing
-- LSP response time < 200ms for common operations
-- File opening < 50ms for files under 1MB
-
-### Testing
-
-#### Running Tests
-
-```bash
-# All tests
-just test
-
-# Specific test file
-busted tests/example_spec.lua
-
-# Watch mode for development
-just test-watch
-
-# With coverage (if available)
-busted --coverage
-```
-
-## Troubleshooting
-
-### Common Issues
-
-#### **Neovim won't start**
-
-```bash
-# Build the binary
-build
-# Check for configuration errors
-./nvim --clean
-./nvim -u NONE
-
-# Quick test with headless mode
-./nvim --headless
-```
-
-## Resources
-
-### Essential Documentation
-
-- [nixCats Documentation](https://github.com/BirdeeHub/nixCats-nvim) - Nix-based Neovim configuration framework
-- [Neovim Documentation](https://neovim.io/doc/) - Official Neovim user manual and API reference
-- [Nix Manual](https://nixos.org/manual/nix/stable/) - Nix package manager documentation
-
-### Plugin Documentation
-
-- [Snacks.nvim](https://github.com/folke/snacks.nvim) - Multi-purpose plugin suite
-- [blink.cmp](https://github.com/Saghen/blink.cmp) - Modern completion engine
-- [Catppuccin](https://github.com/catppuccin/nvim) - Pastel theme for Neovim
-- [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter) - Syntax highlighting and parsing
-
-> **Note for AI Agents**: This file is also available as `AGENTS.md` and `CLAUDE.md` (symlinks). All three files reference the same content. Please refer to
-> this comprehensive development guide for project structure, architecture, and contribution guidelines.
+> Note: This file is also symlinked as `AGENTS.md` and `CLAUDE.md` for convenience.
