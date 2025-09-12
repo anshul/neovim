@@ -4,8 +4,12 @@ require('lze').load {
     lazy = false,
   },
   {
+    'fzf-lua',
+    lazy = false,
+  },
+  {
     'obsidian.nvim',
-    dep = { 'plenary.nvim' },
+    dep = { 'plenary.nvim', 'fzf-lua' },
     event = { 'DeferredUIEnter' },
     cmd = {
       'ObsidianNew',

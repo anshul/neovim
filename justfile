@@ -48,6 +48,11 @@ test_all:
     echo "Running all tests..."
     busted tests/
 
+validate:
+    #!/usr/bin/env bash
+    echo "Validating plugin configuration..."
+    ./scripts/validate-plugins.sh
+
 test_watch:
     #!/usr/bin/env bash
     find lua/ tests/ -name "*.lua" | entr -c busted tests/
