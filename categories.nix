@@ -164,6 +164,7 @@ in
         nvim-dap-python
         nvim-dap-virtual-text
         obsidian-nvim
+        fzf-lua
         render-markdown-nvim
         ssr-nvim
         grug-far-nvim
