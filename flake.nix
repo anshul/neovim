@@ -110,7 +110,7 @@
           packages = with pkgs; [
             # defaultPackage
             just
-            nodejs_24
+            nodejs_22
             gh
             entr # for file watching in TDD
             luajit # lua runtime for tests
