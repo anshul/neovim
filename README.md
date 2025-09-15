@@ -64,27 +64,18 @@ nix run .#nvim
 
 ### With home-manager
 
-Add this repository as an input to your `flake.nix` and import the provided module:
-
-```nix
-# in flake.nix
-inputs.neovim.url = "github:anshul/neovim";
-
-outputs = { self, nixpkgs, neovim, ... }:
-{
-  homeManagerModules = [ neovim.homeModules.default ];
-}
-```
+Add this flake to your inputs and then add the package to your configuration:
 
 ```nix
 {
-  imports = [
-    inputs.neovim.homeModules.default
-  ];
-
-  nvim.enable = true;
+    inputs.neovim = {
+      url = "github:anshul/neovim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 }
 ```
+
+And then install it by adding `inputs.neovim.packages.${system}.default` to your packages
 
 ## Obsidian Integration
 
