@@ -29,6 +29,7 @@ in
         nodePackages.npm
         ripgrep
         fd
+        fzf
         imagemagick
         lazygit
         gh
@@ -46,7 +47,7 @@ in
         harper
         ltex-ls-plus
         texlab
-        marksman
+        markdown-oxide # Rust-based Markdown LSP (no dotnet dependency)
         typescript-language-server
         rust-analyzer
         svelte-language-server

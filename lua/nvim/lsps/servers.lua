@@ -77,7 +77,7 @@ servers.ltex_plus = {
 
 servers.texlab = {}
 
-servers.marksman = {}
+servers.markdown_oxide = {} -- Rust-based Markdown LSP (no dotnet dependency)
 
 -- NOTE: julials must be installed manually
 -- julia --project=~/.julia/environments/nvim-lspconfig -e 'using Pkg; Pkg.add("LanguageServer")'
