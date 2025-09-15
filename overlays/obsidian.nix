@@ -4,7 +4,7 @@ importName: inputs: let
       super.vimPlugins
       // {
         obsidian-nvim = super.vimPlugins.obsidian-nvim.overrideAttrs (oldAttrs: {
-          nvimRequireCheck = "";
+          nvimRequireCheck = "obsidian";
         });
       };
   };
