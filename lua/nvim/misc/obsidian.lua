@@ -11,17 +11,7 @@ require('lze').load {
     'obsidian.nvim',
     dep = { 'plenary.nvim', 'fzf-lua' },
     event = { 'DeferredUIEnter' },
-    cmd = {
-      'ObsidianNew',
-      'ObsidianQuickSwitch',
-      'ObsidianToday',
-      'ObsidianTemplate',
-      'ObsidianLink',
-      'ObsidianBacklinks',
-      'ObsidianLinks',
-      'ObsidianRename',
-      'ObsidianTOC',
-    },
+    cmd = { 'Obsidian' },
     after = function(_)
       local obsidian_path = vim.fn.expand '~/Documents/Obsidian'
       if vim.fn.isdirectory(obsidian_path) == 0 then
@@ -29,7 +19,8 @@ require('lze').load {
       end
 
       require('obsidian').setup {
-        disable_frontmatter = true,
+        legacy_commands = false,
+        frontmatter = { enabled = false },
         workspaces = {
           {
             name = 'Obsidian',
@@ -79,12 +70,12 @@ local function map(mode, key, action, opts)
   vim.keymap.set(mode, key, action, options)
 end
 
-map('n', '<leader>nn', '<cmd>ObsidianNew<cr>', { desc = 'Obsidian new note' })
-map('n', '<leader>nf', '<cmd>ObsidianQuickSwitch<cr>', { desc = 'Obsidian quick switch' })
-map('n', '<leader>nd', '<cmd>ObsidianToday<cr>', { desc = 'Obsidian today' })
-map('n', '<leader>nt', '<cmd>ObsidianTemplate<cr>', { desc = 'Obsidian template' })
-map('v', '<leader>nk', '<cmd>ObsidianLink<cr>', { desc = 'Obsidian link' })
-map('n', '<leader>nb', '<cmd>ObsidianBacklinks<cr>', { desc = 'Obsidian backlinks' })
-map('n', '<leader>nl', '<cmd>ObsidianLinks<cr>', { desc = 'Obsidian links' })
-map('n', '<leader>nr', '<cmd>ObsidianRename<cr>', { desc = 'Obsidian rename' })
-map('n', '<leader>no', '<cmd>ObsidianTOC<cr>', { desc = 'Obsidian table of contents' })
+map('n', '<leader>nn', '<cmd>Obsidian new<cr>', { desc = 'Obsidian new note' })
+map('n', '<leader>nf', '<cmd>Obsidian quick_switch<cr>', { desc = 'Obsidian quick switch' })
+map('n', '<leader>nd', '<cmd>Obsidian today<cr>', { desc = 'Obsidian today' })
+map('n', '<leader>nt', '<cmd>Obsidian template<cr>', { desc = 'Obsidian template' })
+map('v', '<leader>nk', '<cmd>Obsidian link<cr>', { desc = 'Obsidian link' })
+map('n', '<leader>nb', '<cmd>Obsidian backlinks<cr>', { desc = 'Obsidian backlinks' })
+map('n', '<leader>nl', '<cmd>Obsidian links<cr>', { desc = 'Obsidian links' })
+map('n', '<leader>nr', '<cmd>Obsidian rename<cr>', { desc = 'Obsidian rename' })
+map('n', '<leader>no', '<cmd>Obsidian toc<cr>', { desc = 'Obsidian table of contents' })

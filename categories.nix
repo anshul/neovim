@@ -26,7 +26,6 @@ in
     lspsAndRuntimeDeps = with pkgs; {
       general = [
         nodejs
-        nodePackages.npm
         ripgrep
         fd
         fzf

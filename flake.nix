@@ -70,7 +70,6 @@
 
     extra_pkg_config = {
       allowUnfree = true;
-      doCheck = true; # set to false to skip tests
     };
 
     dependencyOverlays = import ./overlays inputs;
@@ -110,7 +109,7 @@
           packages = with pkgs; [
             # defaultPackage
             just
-            nodejs_24
+            nodejs
             gh
             entr # for file watching in TDD
             luajit # lua runtime for tests
