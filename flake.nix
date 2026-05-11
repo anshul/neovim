@@ -1,7 +1,7 @@
 {
   description = "An opinionated AI-first Nix Neovim configuration";
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
     nixCats.url = "github:BirdeeHub/nixCats-nvim";
     pre-commit-hooks.url = "github:cachix/git-hooks.nix";
     plugins-lze = {
