@@ -8,7 +8,6 @@ require('lze').load {
         markdown = {},
         rst = { 'rstcheck', 'vale' },
         nix = { 'nix' },
-        json = { 'jsonlint' },
         css = { 'stylelint' },
         scss = { 'stylelint' },
         dockerfile = { 'hadolint' },

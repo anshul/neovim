@@ -42,7 +42,7 @@ in
         nixd
         astro-language-server
         bash-language-server
-        dockerfile-language-server-nodejs
+        dockerfile-language-server
         vscode-langservers-extracted
         harper
         ltex-ls-plus
@@ -70,7 +70,6 @@ in
         # linters
         rstcheck
         vale
-        nodePackages.jsonlint
         stylelint
         hadolint
         eslint_d
