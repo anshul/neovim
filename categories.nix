@@ -25,7 +25,7 @@ in
     # this includes LSPs
     lspsAndRuntimeDeps = with pkgs; {
       general = [
-        nodejs_22
+        nodejs
         nodePackages.npm
         ripgrep
         fd

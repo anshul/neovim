@@ -14,6 +14,7 @@ overlay
 inputs: let
   inherit (inputs.nixCats) utils;
   overlaySet = {
+    nodejs = import ./nodejs.nix;
     tailwindcss = import ./tailwindcss.nix;
     obsidian = import ./obsidian.nix;
     # example = import ./example.nix;

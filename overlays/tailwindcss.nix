@@ -18,12 +18,12 @@ importName: inputs: let
       };
 
       nativeBuildInputs = [
-        super.nodejs_22
+        super.nodejs
         super.pnpm_9.configHook
       ];
 
       buildInputs = [
-        super.nodejs_22
+        super.nodejs
       ];
 
       pnpmWorkspaces = ["@tailwindcss/language-server..."];
