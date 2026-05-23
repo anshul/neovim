@@ -122,9 +122,7 @@ servers.html = {}
 servers.lexical = {
   filetypes = { 'elixir', 'eelixir', 'heex', 'surface' },
   cmd = { 'lexical' },
-  root_dir = function(fname)
-    return vim.fs.dirname(vim.fs.find({ 'mix.exs' }, { path = fname, upward = true })[1])
-  end,
+  root_markers = { 'mix.exs' },
   settings = {
     lexical = {
       dialyzerEnabled = true,
