@@ -119,18 +119,10 @@ servers.cssls = {}
 
 servers.html = {}
 
-servers.lexical = {
+servers.expert = {
   filetypes = { 'elixir', 'eelixir', 'heex', 'surface' },
-  cmd = { 'lexical' },
+  cmd = { 'expert' },
   root_markers = { 'mix.exs' },
-  settings = {
-    lexical = {
-      dialyzerEnabled = true,
-      fetchDeps = true,
-      formatOnSave = true,
-      suggestSpecs = true,
-    },
-  },
   capabilities = {
     textDocument = {
       definition = { linkSupport = true },

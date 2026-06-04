@@ -52,7 +52,7 @@ in
         svelte-language-server
         tailwindcss-language-server
         tinymist
-        lexical
+        beamPackages.expert
 
         # formatters
         stylua

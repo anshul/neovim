@@ -28,7 +28,7 @@ require('lze').load {
           },
         },
         new_notes_location = 'root',
-        preferred_link_style = 'wiki',
+        link = { style = 'wiki' },
         note_id_func = function(title)
           if title and title ~= '' then
             return title
@@ -55,7 +55,7 @@ require('lze').load {
         picker = { name = 'snacks.pick' },
         ui = { enable = false },
         attachments = {
-          img_folder = 'Atlas/Utilities/Attachments',
+          folder = 'Atlas/Utilities/Attachments',
         },
       }
     end,

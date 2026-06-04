@@ -35,6 +35,13 @@ require('lze').load {
         'promise-async',
         name,
       }
+      package.loaded['async'] = nil
+      for _, path in ipairs(vim.api.nvim_get_runtime_file('lua/async.lua', true)) do
+        if path:find 'promise%-async' then
+          package.loaded['async'] = dofile(path)
+          break
+        end
+      end
     end,
     keys = {
       {

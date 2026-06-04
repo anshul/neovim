@@ -86,7 +86,7 @@ describe('Configuration Integration', function()
       assert.is_not_nil(servers.lua_ls, 'Lua LSP should be configured')
       assert.is_not_nil(servers.rust_analyzer, 'Rust analyzer should be configured')
       assert.is_not_nil(servers.ts_ls, 'TypeScript LSP should be configured')
-      assert.is_not_nil(servers.lexical, 'Elixir Lexical should be configured')
+      assert.is_not_nil(servers.expert, 'Elixir Expert should be configured')
     end)
 
     it('should have enhanced Rust configuration', function()
