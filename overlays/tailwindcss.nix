@@ -11,15 +11,17 @@ importName: inputs: let
         hash = "sha256-XXRWxN+1fOuVULh+ZE+XRRBaoRzhCpw7n8SkBIorG9A=";
       };
 
-      pnpmDeps = super.pnpm_9.fetchDeps {
+      pnpmDeps = super.fetchPnpmDeps {
         inherit (finalAttrs) pname version src pnpmWorkspaces prePnpmInstall;
-        fetcherVersion = 1;
-        hash = "sha256-SUEq20gZCiTDkFuNgMc5McHBPgW++8P9Q1MJb7a7pY8=";
+        pnpm = super.pnpm_9;
+        fetcherVersion = 3;
+        hash = "sha256-RL08eKZGWeH+xEVUETGZucPo/2Wt3YBT7sXRdIWrYjw=";
       };
 
       nativeBuildInputs = [
         super.nodejs
-        super.pnpm_9.configHook
+        super.pnpm_9
+        super.pnpmConfigHook
       ];
 
       buildInputs = [
