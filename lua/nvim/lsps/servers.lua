@@ -77,7 +77,19 @@ servers.ltex_plus = {
 
 servers.texlab = {}
 
-servers.markdown_oxide = {} -- Rust-based Markdown LSP (no dotnet dependency)
+-- Rust-based Markdown LSP (no dotnet dependency)
+-- didChangeWatchedFiles disabled: Neovim doesn't filter watcher events to the
+-- server's registered globs, flooding markdown-oxide into a CPU runaway on
+-- home-rooted workspaces (neovim/neovim#23291, markdown-oxide#297)
+servers.markdown_oxide = {
+  capabilities = {
+    workspace = {
+      didChangeWatchedFiles = {
+        dynamicRegistration = false,
+      },
+    },
+  },
+}
 
 -- NOTE: julials must be installed manually
 -- julia --project=~/.julia/environments/nvim-lspconfig -e 'using Pkg; Pkg.add("LanguageServer")'
